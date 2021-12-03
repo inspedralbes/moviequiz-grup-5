@@ -29,7 +29,6 @@ fetch(`https://labs.inspedralbes.cat/~aperezh/login2.php`, {
 document.getElementById("busqueda").addEventListener("click",function(){
     let busqueda=document.getElementById("busquedaPeli").value;
         
-
         fetch(`http://www.omdbapi.com/?s=${busqueda}&apikey=93763d43`).then(function(res){
             return res.json();
         }).then(function(data){
@@ -37,8 +36,8 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 let htmlStr="";
                 for (let index = 0; index < 10; index++) {
 
-                    htmlStr += `<div id="contenedor" class="row">
-                                    <div class="col s6 m3">
+                    htmlStr += `<div >
+                                    <div class="col s2">
                                         <div id="pelicula" class="card">
                                         <div class="card-image">
                                         <img src="${data.Search[index].Poster}" width="50px">
