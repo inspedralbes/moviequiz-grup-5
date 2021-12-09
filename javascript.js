@@ -1,4 +1,4 @@
-let u = document.getElementById("username").value;
+/*let u = document.getElementById("username").value;
 
 let p = document.getElementById("pwd").value;
 
@@ -25,7 +25,7 @@ fetch(`https://labs.inspedralbes.cat/~aperezh/login2.php`, {
                     console.log(data);
                 });
 
-
+*/
 document.getElementById("busqueda").addEventListener("click",function(){
     let busqueda=document.getElementById("busquedaPeli").value;
         
@@ -42,7 +42,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                             <div class="card-image">
                                             <img src="${data.Search[index].Poster}" width="50px">
                                             <span class="card-title">${data.Search[index].Title}</span>
-                                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                                            <a class="btn-floating halfway-fab waves-effect waves-light red" href="#modal1"><i class="material-icons">add</i></a>
 
                                             <div id="modal1" class="modal">
                                             <div class="modal-content">
@@ -67,6 +67,12 @@ document.getElementById("busqueda").addEventListener("click",function(){
          
                 }
                 document.getElementById("resultados").innerHTML = htmlStr;
+                //LE DIGO QUE ARRANQUE EL MODAL
+                var elems = document.querySelectorAll('.modal');
+                var instances = M.Modal.init(elems,{});
+
+
+
         });
     });
 
