@@ -12,7 +12,7 @@
  define('USER', 'root');
  define('PASSWORD', '');
  define('HOST', 'localhost');
- define('DATABASE', 'test');
+ define('DATABASE', 'prueba');
   
     try {
         $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
