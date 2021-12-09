@@ -12,7 +12,7 @@
 <body>  
   <nav>
     <div class="nav-wrapper">
-      <img src="img/logo.png" width="60px">
+      <img src="img/logo.png" width="50px">
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
             <li>
@@ -25,7 +25,7 @@
             <li>
                 <div class="input-field  ">
                     <i class="material-icons prefix">https</i>
-                    <input id="pwd" type="tel" class="validate">
+                    <input id="pwd" type="password" class="validate">
                     <label for="pwd">Contraseña</label>
                 </div>
             </li>
@@ -44,6 +44,7 @@
   <ul class="sidenav" id="mobile-demo">
     <li>
         <div class="input-field col s6 l3 ">
+            <form method="post">
             <i class="material-icons prefix">account_circle</i>
             <input id="username" type="text" class="validate">
             <label for="username">Usuario</label>
@@ -52,15 +53,16 @@
     <li>
         <div class="input-field col s6 l3 ">
             <i class="material-icons prefix">https</i>
-            <input id="pwd" type="tel" class="validate">
+            <input id="pwd" type="password" class="validate">
             <label for="pwd">Contraseña</label>
+            </form>
         </div>
     </li>
     <li>
         <div class="input-field col s6 l3 ">           
             <button class="btn waves-effect waves-light" type="submit" name="action">Entrar
             </button>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Registrarse
+            <button class="btn waves-effect waves-light" type="button" name="action">Registrarse
             </button>
         </div>
     </li>
@@ -84,24 +86,36 @@
           </nav>
           <br><br><br><br><br>
 
-        <div class="row">
+        <div class="col s8">
+          <center>
+            <h4>Peliculas</h4>
+          </center>
+      
           <div id="resultados">
 
           </div>
 
         </div>
+        <div class="col s4">
+          <center>
+            <h4>Ultimos Usuarios</h4>
+          </center>
+          <div id="Usuarios">
+          </div>
+        </div>
     </div>
 </div>
 
   <script type="text/javascript" src="javascript.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
-  <script>
+
+  <script>    
     document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems);
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems,{});
     });
   </script>
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
 </html>

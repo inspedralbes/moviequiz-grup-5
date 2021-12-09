@@ -14,8 +14,6 @@ if (($user == "admin")  && ($pwd == "1234")) {
 
         $arr = array ('exito'=>true,'nombre'=>"Alvaro Perez",'imagen'=>'https://randomuser.me/api/portraits/men/23.jpg'); ;    
 
-}
-
 else {
 
         $arr = array ('exito'=>false);
