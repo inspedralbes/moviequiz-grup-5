@@ -36,17 +36,17 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 let htmlStr="";
                 for (let index = 0; index < 10; index++) {
 
+
                     htmlStr += `<div >
-                                    <div class="col s2">
+                                    <div class="col s8 l4">
                                         <div id="pelicula" class="card">
                                             <div class="card-image">
                                             <img src="${data.Search[index].Poster}" width="50px">
-                                            <span class="card-title">${data.Search[index].Title}</span>
-                                            <a class="btn-floating halfway-fab waves-effect waves-light red" href="#modal1"><i class="material-icons">add</i></a>
+                                            <a class="waves-effect waves-light btn modal-trigger blue" href="#modal${index}"><i class="material-icons">add</i></a>
 
-                                            <div id="modal1" class="modal">
+                                            <div id="modal${index}" class="modal">
                                             <div class="modal-content">
-                                              <h4>Las Pruebas</h4>
+                                              <h4>${data.Search[index].Title}</h4>
                                               <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo, aspernatur a laboriosam deleniti odit quidem blanditiis quia asperiores iste iusto minima est labore corrupti, totam vitae ad placeat obcaecati?
                                               </p>
                                             </div>
