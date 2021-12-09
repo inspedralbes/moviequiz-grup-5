@@ -39,8 +39,9 @@ abstract class DbAbstractClass{
   protected function get_results_from_query() {
     $this->open_connection();
     $result = $this->conn->query($this->query);
-    for ($i=0;$i<$result->num_rows;$i++)
-      $this->rows[$i]=$result->fetch_assoc();
+    for ($i=0;$i<$result->num_rows;$i++) {
+        $this->rows[$i] = $result->fetch_assoc();
+    }
     $result->close();
     $this->close_connection();
   }
