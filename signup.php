@@ -26,10 +26,10 @@ if (isset($_POST['register'])) {
  
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = $_POST['passwd'];
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
  
-    $query = $connection->prepare("SELECT * FROM users WHERE EMAIL=:email");
+    $query = $connection->prepare("SELECT * FROM usuario WHERE EMAIL=:email");
     $query->bindParam("email", $email, PDO::PARAM_STR);
     $query->execute();
  
@@ -38,7 +38,7 @@ if (isset($_POST['register'])) {
     }
  
     if ($query->rowCount() == 0) {
-        $query = $connection->prepare("INSERT INTO users(USERNAME,PASSWORD,EMAIL) VALUES (:username,:password_hash,:email)");
+        $query = $connection->prepare("INSERT INTO usuario(USERNAME,PASSWD,EMAIL) VALUES (:username,:password_hash,:email)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
         $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
         $query->bindParam("email", $email, PDO::PARAM_STR);
@@ -55,30 +55,30 @@ if (isset($_POST['register'])) {
 ?>
 
 <body>
-    <div class="row">
-        <form class="col s12" method="POST" action="" name="signup-form">
+<div class="row">
+    <form class="col s12" method="POST" action="" name="signup-form">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Catarsus" name="username" id="username" type="text" class="validate">
+                <label for="username">Usuario</label>
+            </div>
             <div class="row">
-                <div class="input-field col s6">
-                    <input placeholder="Mario" name="username" id="username" type="text" class="validate">
-                    <label for="username">Usuario</label>
-                </div>
-                <div class="row">
                 <div class="input-field col s12">
-                    <input name="email" id="email" type="email" class="validate">
+                    <input placeholder="abc@inspedralbes.cat" name="email" id="email" type="email" class="validate">
                     <label for="email">Email</label>
                 </div>
-                </div>
-                <div class="input-field col s6">
-                    <input id="password" name="password" type="password" class="validate">
-                    <label for="password">Contraseña</label>
-                </div>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
-        </form>
-    </div>
-    <div class="input-field col s3">
-        <a class="waves-effect waves-light btn-small" href="login.php">Volver</a>
-    </div>
+            <div class="input-field col s6">
+                <input id="password" name="passwd" type="password" class="validate">
+                <label for="password">Contraseña</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
+    </form>
+</div>
+<div class="input-field col s3">
+    <a class="waves-effect waves-light btn-small" href="login.php">Volver</a>
+</div>
 </body>
 
 </html>

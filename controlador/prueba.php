@@ -1,13 +1,13 @@
 <?php
 require ("../model/players.php");
+require("../signup.php");
 
 $player=new players();
 
-echo("player creado");
 
-$resultado=$player -> selectAll();
+//$resultado=$player -> selectAll(array("username","email","passwd"));
 
-print_r($resultado);
+//print_r($resultado);
 
-echo("hola");
-?> 
+?>
+

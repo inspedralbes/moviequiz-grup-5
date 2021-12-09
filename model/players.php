@@ -39,6 +39,7 @@ class players extends DbAbstractClass {
       else $this->query .= ", " . $fields[$i];
     }
     $this->query .= " FROM usuario";
+    // $this->query = "SELECT * FROM usuario";
     $this->get_results_from_query();
     return $this->rows;
     
@@ -61,22 +62,22 @@ class players extends DbAbstractClass {
     return $this->rows;
   }
   
-  
+
   public function insert($user_data = array()) {
-    
+
     if (array_key_exists("nom", $user_data)) {
       $this->select($user_data["nom"]);
       if ($user_data["nom"]!= $this->nom) {
         foreach ($user_data as $field => $value)
           $$field = $value;
-        $this->query="INSERT INTO persones (nom, edat, alcada)
-                      VALUES ('$nom', '$edat', '$alcada')";
+        $this->query="INSERT INTO persones (username, email, passwd)
+                      VALUES ($this->username,$this->passwd,$this->email)";
         $this->execute_single_query();
         $this->message = "Usuari inserit amb èxit";
       } else $this->message = "Usuari ja existent";
     } else $this->message = "Usuari no inserit";
   }
-  
+
   public function update ($userData = array()) {
    
   }
