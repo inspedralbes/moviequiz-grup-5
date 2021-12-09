@@ -57,6 +57,7 @@ if (isset($_POST['register'])) {
 ?>
 
 <body>
+<center>
 <div class="row">
     <form class="col s12" method="POST" action="" name="signup-form">
         <div class="row">
@@ -81,6 +82,7 @@ if (isset($_POST['register'])) {
 <div class="input-field col s3">
     <a class="waves-effect waves-light btn-small" href="login.php">Volver</a>
 </div>
+</center>
 </body>
 
 </html>
