@@ -39,13 +39,26 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     htmlStr += `<div >
                                     <div class="col s2">
                                         <div id="pelicula" class="card">
-                                        <div class="card-image">
-                                        <img src="${data.Search[index].Poster}" width="50px">
-                                        <span class="card-title">${data.Search[index].Title}</span>
-                                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                                        </div>
-                                        <div class="card-content">
-                                        <p>${data.Search[index].Year}</p>
+                                            <div class="card-image">
+                                            <img src="${data.Search[index].Poster}" width="50px">
+                                            <span class="card-title">${data.Search[index].Title}</span>
+                                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+                                            <div id="modal1" class="modal">
+                                            <div class="modal-content">
+                                              <h4>Las Pruebas</h4>
+                                              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo, aspernatur a laboriosam deleniti odit quidem blanditiis quia asperiores iste iusto minima est labore corrupti, totam vitae ad placeat obcaecati?
+                                              </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
+                                            </div>
+                                            </div>
+                    
+                                            </div>
+
+                                            <div class="card-content">
+                                            <p>${data.Search[index].Year}</p>
                                         </div>
                                         </div> 
                                     </div>
@@ -56,4 +69,5 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 document.getElementById("resultados").innerHTML = htmlStr;
         });
     });
+
 
