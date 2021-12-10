@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+
 </head>
 <?php
 
@@ -56,31 +59,38 @@ if (isset($_POST['register'])) {
  
 ?>
 
-<body>
-<div class="row">
-    <form class="col s12" method="POST" action="" name="signup-form">
-        <div class="row">
-            <div class="input-field col s4">
-                <input name="username" id="username" type="text" class="validate">
-                <label for="username">Usuario</label>
+<body class="#64b5f6 blue lighten-2">
+<div class="container ">
+        <form class="col s12" method="POST" action="" name="signup-form">
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input  placeholder="" id="username" type="text" class="validate" required>
+                    <label for="username">Usuario</label>
+                </div>
             </div>
             <div class="row">
-                <div class="input-field col s4">
-                    <input name="email" id="email" type="email" class="validate">
+                <div class="input-field col s4 offset-s4">
+                    <i class="material-icons prefix">mail</i>
+                    <input name="email" id="email" type="email" class="validate" required>
                     <label for="email">Email</label>
                 </div>
             </div>
-            <div class="input-field col s4">
-                <input id="password" name="passwd" type="password" class="validate">
-                <label for="password">Contraseña</label>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" name="passwd" type="password" class="validate" required>
+                    <label for="password">Contraseña</label>
+                </div>
             </div>
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
-    </form>
+
+            <button class="btn waves-effect waves-light #1e88e5 blue darken-1" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
+        </form>
+    <div class="input-field col s3">
+        <a class="waves-effect waves-light btn-small #1e88e5 blue darken-1" href="login.php">Volver</a>
+    </div>
 </div>
-<div class="input-field col s3">
-    <a class="waves-effect waves-light btn-small" href="login.php">Volver</a>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
