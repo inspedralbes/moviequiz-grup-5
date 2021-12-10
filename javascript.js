@@ -46,6 +46,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
             return res.json();
         }).then(function(data){
 
+                console.log(data);
                 let htmlStr="";
                 for (let index = 0; index < 10; index++) {
 
