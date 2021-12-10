@@ -87,7 +87,9 @@ if (isset($_POST['register'])) {
             <button class="btn waves-effect waves-light #1e88e5 blue darken-1" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
         </form>
     <div class="input-field col s3">
-        <a class="waves-effect waves-light btn-small #1e88e5 blue darken-1" href="login.php">Volver</a>
+        <form action="pruebaindex.php">
+            <a class="waves-effect waves-light btn-small #1e88e5 blue darken-1" href="login.php">Volver</a>
+        </form>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
