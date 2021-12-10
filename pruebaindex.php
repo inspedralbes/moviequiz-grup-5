@@ -52,9 +52,17 @@ include "header.html";
         </div>
         <div class="col s2 m2 l2">
 
-              <h4>Ultimos Usuarios</h4>
+              <center><h4>Estrenos</h4><center>
  
-            <div id="Usuarios">
+            <div id="Ult_Peliculas">
+               <div class="carousel">
+                 <a class="carousel-item" href="#one!"><img src="img/img1.jpg"></a>
+                 <a class="carousel-item" href="#two!"><img src="img/img2.jpg"></a>
+                 <a class="carousel-item" href="#three!"><img src="img/img3.jpg"></a>
+                 <a class="carousel-item" href="#four!"><img src="img/img4.jpg"></a>
+                 <a class="carousel-item" href="#five!"><img src="img/img5.jpg"></a>
+                 <a class="carousel-item" href="#six!"><img src="img/img6.jpg"></a>
+               </div>
             </div>
         </div>
     </div>

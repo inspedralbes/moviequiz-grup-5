@@ -30,6 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
   });
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, {duration:2000});
+  });
+  document.getElementById("delete").addEventListener("click",function(){
+    let htmlStr="";
+    document.getElementById("resultados").innerHTML = htmlStr;
+});
 
 document.getElementById("busqueda").addEventListener("click",function(){
     let busqueda=document.getElementById("busquedaPeli").value;
@@ -51,8 +59,12 @@ document.getElementById("busqueda").addEventListener("click",function(){
 
                                             <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
                                             <div class="modal-content">
+                                            <center>
                                             <h4>${data.Search[index].Title}</h4>
 
+                                                 <p>Valoracion</p>
+
+                                              </center>
 
                                             </div>
                                             <div class="modal-footer #1e88e5 blue darken-1">
@@ -80,9 +92,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
 
         });
     });
-document.getElementById("delete").addEventListener("click",function(){
-    let htmlStr="";
-    document.getElementById("resultados").innerHTML = htmlStr;
-});
+
 
 
