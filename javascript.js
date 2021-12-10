@@ -26,6 +26,11 @@ fetch(`https://labs.inspedralbes.cat/~aperezh/login2.php`, {
                 });
 
 */
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });
+
 document.getElementById("busqueda").addEventListener("click",function(){
     let busqueda=document.getElementById("busquedaPeli").value;
         
@@ -75,5 +80,9 @@ document.getElementById("busqueda").addEventListener("click",function(){
 
         });
     });
+document.getElementById("delete").addEventListener("click",function(){
+    let htmlStr="";
+    document.getElementById("resultados").innerHTML = htmlStr;
+});
 
 
