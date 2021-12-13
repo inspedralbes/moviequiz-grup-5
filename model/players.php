@@ -45,7 +45,7 @@ class players extends DbAbstractClass {
     
   }
   
-  public function select($username="") {
+  public function select($username=""){
    
       $this->query = "SELECT username, passwd, email
                     FROM usuario
@@ -60,6 +60,21 @@ class players extends DbAbstractClass {
     } else  $this->message = "Persona no trobada";
     
     return $this->rows;
+  }
+  public function login($username="", $passwd=""){
+
+    $this->query = "SELECT username, passwd
+                    FROM usuario
+                    WHERE username='$username' AND passwd='$passwd'";
+    $this->get_results_from_query();
+
+    if (count($this->rows) == 1) {
+      $correcto = 1;
+
+    } else{
+        $correcto = 0;
+      }
+    return $correcto;
   }
   
 
@@ -85,7 +100,7 @@ class players extends DbAbstractClass {
   public function delete ($nom="") {
   
   }
- 
+
     
 }
 

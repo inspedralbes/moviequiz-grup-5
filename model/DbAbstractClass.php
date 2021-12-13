@@ -17,6 +17,7 @@ abstract class DbAbstractClass{
   private $conn;
 
   abstract protected function selectAll();
+  abstract protected function login();
   abstract protected function select();
   abstract protected function insert();
   abstract protected function update();

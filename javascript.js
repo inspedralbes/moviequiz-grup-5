@@ -1,16 +1,16 @@
-/*let u = document.getElementById("username").value;
+let u = document.getElementById("username").value;
 
-let p = document.getElementById("pwd").value;
+let p = document.getElementById("passwd").value;
 
 
             const datosEnvio = new FormData();
 
             datosEnvio.append('username', u);
 
-            datosEnvio.append('pwd', p);
+            datosEnvio.append('passwd', p);
 
 
-fetch(`https://labs.inspedralbes.cat/~aperezh/login2.php`, {
+fetch(`https://labs.inspedralbes.cat/~aperezh/login.php`, {
 
                     method: 'POST',
 
@@ -25,7 +25,7 @@ fetch(`https://labs.inspedralbes.cat/~aperezh/login2.php`, {
                     console.log(data);
                 });
 
-*/
+
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});

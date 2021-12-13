@@ -37,11 +37,7 @@ if (isset($_POST['register'])) {
     $query = $connection->prepare("SELECT * FROM usuario WHERE EMAIL=:email");
     $query->bindParam("email", $email, PDO::PARAM_STR);
     $query->execute();
- 
-    if ($query->rowCount() > 0) {
-        echo '<p>¡El correo introducuido ya existe!</p>';
-    }
- 
+
     if ($query->rowCount() == 0) {
         $query = $connection->prepare("INSERT INTO usuario(USERNAME,PASSWD,EMAIL) VALUES (:username,:password_hash,:email)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
@@ -60,6 +56,7 @@ if (isset($_POST['register'])) {
 ?>
 
 <body class="#64b5f6 blue lighten-2">
+<center><img src="/img/MovieQuiz.png" width="200px"></center><br>
 <div class="container ">
         <form class="col s12" method="POST" action="" name="signup-form">
             <div class="row">
