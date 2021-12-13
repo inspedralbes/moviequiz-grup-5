@@ -1,6 +1,6 @@
 /*let u = document.getElementById("username").value;
 
-let p = document.getElementById("passwd").value;
+let p = document.getElementById("pwd").value;
 
 
             const datosEnvio = new FormData();
@@ -10,7 +10,8 @@ let p = document.getElementById("passwd").value;
             datosEnvio.append('passwd', p);
 
 
-fetch(`https://labs.inspedralbes.cat/~aperezh/login.php`, {
+
+            fetch(`./login.php`, {
 
                     method: 'POST',
 

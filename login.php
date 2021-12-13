@@ -3,14 +3,15 @@ include ('./model/players.php');
 
 $user = $_POST['username'];
 
-$pwd = $_POST['password_hash'];
-
+$pwd = $_POST['passwd'];
+$password_hash = password_hash($pwd,PASSWORD_BCRYPT);
 $player=new players();
 
-$result=$player->login($user,$pwd);
+$result=$player->login($user,$password_hash);
 
 if($result==1){
     echo "okay";
+    console.log("logeado");
 
 }else{
     echo "No.";
@@ -18,27 +19,6 @@ if($result==1){
 }
 
 
-/*
-$timer=rand(1,7);
-
-sleep($timer);
-
-if (($user == "admin")  && ($pwd == "1234")) {
-
-    session_start();
-
-    $arr = array('exito' => true, 'nombre' => "Alvaro Perez", 'imagen' => 'https://randomuser.me/api/portraits/men/23.jpg');
-
-}else {
-
-        $arr = array ('exito'=>false);
-
-}
-
-$myJSON = json_encode($arr);
-
-echo $myJSON;
-*/
 
 ?>
 
