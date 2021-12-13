@@ -1,4 +1,4 @@
-/*let u = document.getElementById("username").value;
+let u = document.getElementById("username").value;
 
 let p = document.getElementById("pwd").value;
 
@@ -24,7 +24,7 @@ let p = document.getElementById("pwd").value;
                 .then(data => {
 
                     console.log(data);
-                });*/
+                });
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
