@@ -34,10 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
     var instances = M.Carousel.init(elems, {duration:2000});
   });
-  document.getElementById("delete").addEventListener("click",function(){
+document.getElementById("delete").addEventListener("click",function(){
     let htmlStr="";
     document.getElementById("resultados").innerHTML = htmlStr;
 });
+document.getElementById("registrarse").addEventListener("click",function(){
+    window.location="signup.php";
+});
+
 
 document.getElementById("busqueda").addEventListener("click",function(){
     let busqueda=document.getElementById("busquedaPeli").value;
@@ -63,9 +67,9 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                             <center>
                                             <h4>${data.Search[index].Title}</h4>
 
-                                                 <p>Valoracion</p>
+                                                <p>Valoracion</p>
 
-                                              </center>
+                                                </center>
 
                                             </div>
                                             <div class="modal-footer #1e88e5 blue darken-1">
