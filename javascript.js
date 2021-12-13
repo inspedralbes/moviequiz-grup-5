@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 document.getElementById("delete").addEventListener("click",function(){
     let htmlStr="";
-    document.getElementById("resultados").innerHTML = htmlStr;
+    document.get
+    ementById("resultados").innerHTML = htmlStr;
     videos();
 });
 document.getElementById("registrarse").addEventListener("click",function(){
