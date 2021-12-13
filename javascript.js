@@ -1,3 +1,5 @@
+document.getElementById("login").addEventListener("click",function(){
+
 let u = document.getElementById("username").value;
 
 let p = document.getElementById("pwd").value;
@@ -17,14 +19,14 @@ let p = document.getElementById("pwd").value;
 
                     body: datosEnvio
 
-                })
-
-                .then(response => response.json())
+                }).then(response => response.json())
 
                 .then(data => {
 
                     console.log(data);
                 });
+            });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
