@@ -1,4 +1,4 @@
-let u = document.getElementById("username").value;
+/*let u = document.getElementById("username").value;
 
 let p = document.getElementById("passwd").value;
 
@@ -23,8 +23,7 @@ fetch(`https://labs.inspedralbes.cat/~aperezh/login.php`, {
                 .then(data => {
 
                     console.log(data);
-                });
-
+                });*/
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
@@ -37,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("delete").addEventListener("click",function(){
     let htmlStr="";
     document.getElementById("resultados").innerHTML = htmlStr;
+    videos();
 });
 document.getElementById("registrarse").addEventListener("click",function(){
     window.location="signup.php";
@@ -98,5 +98,17 @@ document.getElementById("busqueda").addEventListener("click",function(){
         });
     });
 
+function videos(){
+    let htmlStr="";
+    htmlStr+=`
+    <center>
+    <video width="1000" height="500" id="video" autoplay muted>
+    <source src="/vid/video2.mp4" type="video/mp4">
+    </video>
+    <center>
+    `;
+    document.getElementById("resultados").innerHTML = htmlStr;
 
+    return htmlStr;
+};
 
