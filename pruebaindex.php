@@ -48,7 +48,7 @@ include "header.html";
           <div id="resultados">
             <center>
             <video width="1000" height="500" id="video" autoplay muted>
-            <source src="/vid/video2.mp4" type="video/mp4">
+            <source src="/vid/video1.mp4" type="video/mp4">
             </video>
             <center>
           </div>
