@@ -120,7 +120,9 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                             </div>
                                             <div class="modal-footer #1e88e5 blue darken-1">
                                               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
-                                            </div>*/
+                                            </div>
+                                        </div>*/
+                                        
          
                 }
                 document.getElementById("resultados").innerHTML = htmlStr;
