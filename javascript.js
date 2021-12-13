@@ -104,11 +104,11 @@ document.getElementById("busqueda").addEventListener("click",function(){
 function videos(){
     let htmlStr="";
     htmlStr+=`
-    <center>
-    <video width="1000" height="500" id="video" autoplay muted>
-    <source src="/vid/video2.mp4" type="video/mp4">
-    </video>
-    <center>
+        <center>
+        <video width="1000" height="500" id="video" autoplay muted>
+        <source src="/vid/video2.mp4" type="video/mp4">
+        </video>
+        <center>
     `;
     document.getElementById("resultados").innerHTML = htmlStr;
 
