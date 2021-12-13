@@ -113,10 +113,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                             <div class="modal-footer #1e88e5 blue darken-1">
                                               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
                                             </div>
-
-                                            <div class="card-content">
-                                            <p><b>${data.Search[index].Title}</b></p>
-                                        </div>
                                         </div> 
                                     </div>
                                 </div>                           
