@@ -70,16 +70,48 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                             <center>
                                             <h4>${data.Search[index].Title}</h4>
 
-                                                <p>Valoracion</p>
-
-                                                </center>
-
+                                                <h3>Valoracion</p>
+                                                <div>
+                                                    <label>
+                                                        <input name"Favorito" type="checkbox"/>
+                                                        <span>Marcar como favorito</span>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <br>
+                                                    <label>
+                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <span>1</span>
+                                                    </label>
+                                                    <label>
+                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <span>2</span>
+                                                    </label>  
+                                                    <label>
+                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <span>3</span>
+                                                    </label>
+                                                    <label>
+                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <span>4</span>
+                                                    </label>   
+                                                    <label>
+                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <span>5</span>
+                                                    </label>    
+                                                
+                                                </div>
+                                                <div class"input-field">
+                                                    <textarea id="comentario" class="materialize-textarea" data-length="150"></textarea>
+                                                    <label for="comentario">Comentario<label>
+                                                </div>
+                                                <div>
+                                                    <a class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</a>
+                                                </div>
+                                            </center>    
                                             </div>
                                             <div class="modal-footer #1e88e5 blue darken-1">
                                               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
-                                            </div>
-                                            </div>
-                    
                                             </div>
 
                                             <div class="card-content">
