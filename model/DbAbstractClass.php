@@ -4,8 +4,8 @@
 abstract class DbAbstractClass{
  
   private static $db_host = "localhost";
-  private static $db_user = "root";
-  private static $db_pass = "";
+  private static $db_user = "a20marsolluc_admin";
+  private static $db_pass = "Admin1234";
  
 
   protected $db_name;

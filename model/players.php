@@ -13,7 +13,7 @@ class players extends DbAbstractClass {
  // public $message;
   
   function __construct() {
-    $this->db_name = "prueba";
+    $this->db_name = "a20marsolluc_moviequiz";
     }
   
   function __toString() {
