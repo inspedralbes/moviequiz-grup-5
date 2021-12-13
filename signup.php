@@ -50,7 +50,7 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
  
         if ($result) {
-            echo '<p class="flow-text">Te has registrado correctamente!!</p>';
+            echo '<p class="flow-text centrao">Te has registrado correctamente!!</p>';
         } else {
             echo '<p class="error">Algun paramentro es incorrecto!</p>';
         }
@@ -65,7 +65,7 @@ if (isset($_POST['register'])) {
             <div class="row">
                 <div class="input-field col s4 offset-s4">
                     <i class="material-icons prefix">account_circle</i>
-                    <input  placeholder="" id="username" type="text" class="validate" required>
+                    <input  placeholder="" id="username" name="username" type="text" class="validate" required>
                     <label for="username">Usuario</label>
                 </div>
             </div>
