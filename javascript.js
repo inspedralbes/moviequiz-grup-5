@@ -58,12 +58,19 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 for (let index = 0; index < 10; index++) {
 
 
-                    htmlStr += `<div>
-                                    <div class="col s8 m6 l2">
+                    htmlStr += `
+                                    <div class="col s4 m6 l6">
                                         <div id="pelicula" class="card">
                                             <div class="card-image">
-                                            <img src="${data.Search[index].Poster}" width="50px">
-                                            <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
+                                            <img src="${data.Search[index].Poster}" width="50px;">
+                                            </div>
+                                         
+                                        </div> 
+                                    </div>
+                                                         
+                                `;
+                    //MODALS DE LAS PELICULAS PARA COMENTAR, NO FUNCIONA POR ALGUN MOTIVO
+                    /*<a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
 
                                             <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
                                             <div class="modal-content">
@@ -86,7 +93,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                     <label>
                                                         <input name"valoracion" type="radio" value="1"/>
                                                         <span>2</span>
-                                                    </label>  
+                                                    </label>
                                                     <label>
                                                         <input name"valoracion" type="radio" value="1"/>
                                                         <span>3</span>
@@ -94,12 +101,12 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                     <label>
                                                         <input name"valoracion" type="radio" value="1"/>
                                                         <span>4</span>
-                                                    </label>   
+                                                    </label>
                                                     <label>
                                                         <input name"valoracion" type="radio" value="1"/>
                                                         <span>5</span>
-                                                    </label>    
-                                                
+                                                    </label>
+
                                                 </div>
                                                 <div class"input-field">
                                                     <textarea id="comentario" class="materialize-textarea" data-length="150"></textarea>
@@ -108,15 +115,11 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                 <div>
                                                     <a class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</a>
                                                 </div>
-                                            </center>    
+                                            </center>
                                             </div>
                                             <div class="modal-footer #1e88e5 blue darken-1">
                                               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>                           
-                                `;
+                                            </div>*/
          
                 }
                 document.getElementById("resultados").innerHTML = htmlStr;
