@@ -28,7 +28,7 @@ let p = document.getElementById("pwd").value;
                         conectado = 1;
                         document.getElementById("mensaje").innerHTML = "Bienvenido a Movie Quiz 5 " + data.nombre;
                         document.getElementById("perfileImg").setAttribute("src", data.imagen);
-                        
+
                         document.getElementById("divLogin").classList.remove("active");
                         document.getElementById("divLogin").classList.add("noactive");
 
@@ -102,30 +102,30 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                 <h5>Valoracion</h5>
                                                 <div>
                                                     <label>
-                                                        <input name"Favorito" type="checkbox"/>
+                                                        <input name="Favorito" type="checkbox"/>
                                                         <span>Marcar como favorito</span>
                                                     </label>
                                                 </div>
                                                 <div>
                                                     <br>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <input name="valoracion" type="radio" value="1"/>
                                                         <span>1</span>
                                                     </label>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="2"/>
+                                                        <input name="valoracion" type="radio" value="2"/>
                                                         <span>2</span>
                                                     </label>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="3"/>
+                                                        <input name="valoracion" type="radio" value="3"/>
                                                         <span>3</span>
                                                     </label>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="4"/>
+                                                        <input name="valoracion" type="radio" value="4"/>
                                                         <span>4</span>
                                                     </label>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="5"/>
+                                                        <input name="valoracion" type="radio" value="5"/>
                                                         <span>5</span>
                                                     </label>
 
