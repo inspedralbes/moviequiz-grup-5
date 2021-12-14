@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos/style.css">
 
 </head>
 <?php
@@ -46,9 +46,9 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
  
         if ($result) {
-            echo '<p class="flow-text centrao">Te has registrado correctamente!!</p>';
+            echo '<center><p class="flow-text centrao">Te has registrado correctamente!!</p></center>';
         } else {
-            echo '<p class="error">Algun paramentro es incorrecto!</p>';
+            echo '<center><p class="error">Algun paramentro es incorrecto!</p></center>';
         }
     }
 }
@@ -80,15 +80,16 @@ if (isset($_POST['register'])) {
                     <label for="password">Contraseña</label>
                 </div>
             </div>
-
+    <center>
             <button class="btn waves-effect waves-light #1e88e5 blue darken-1" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
         </form>
     <div class="input-field col s3">
         <form action="pruebaindex.php">
-            <a class="waves-effect waves-light btn-small #1e88e5 blue darken-1" href="login.php">Volver</a>
+            <a class="waves-effect waves-light btn-small #1e88e5 blue darken-1" href="index.php">Volver</a>
         </form>
     </div>
 </div>
+    <center>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 

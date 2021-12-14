@@ -147,4 +147,7 @@ function videos(){
 
     return htmlStr;
 };
+function modal(){
+
+};
 

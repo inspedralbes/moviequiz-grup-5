@@ -7,7 +7,7 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/style.css">
 
 </head>
 <body class="#64b5f6 blue lighten-2">  
@@ -34,7 +34,7 @@ include "header.html";
                 <center>
                   <button id="busqueda" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Buscar</button>
                   <button id="delete" class="btn waves-effect waves-light red" type="button">Borrar</button>
-                  <button id="game" class="btn waves-effect waves-light" type="button">Jugar</button>
+                  <a id="game" class="waves-effect waves-light btn modal-trigger" href="#modal1">Juego</a>
                 </center>
             </div>
         </nav>
