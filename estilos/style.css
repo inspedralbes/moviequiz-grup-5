@@ -7,3 +7,9 @@
         border-radius: 25px;
         background-color: black;
     }
+    .active{
+        display:none;
+    }
+    .noactive{
+        display:block;
+    }

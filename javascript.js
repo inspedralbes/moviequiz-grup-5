@@ -24,6 +24,35 @@ let p = document.getElementById("pwd").value;
                 .then(data => {
 
                     console.log(data);
+                    if (data.exito == true) {
+                        conectado = 1;
+                        document.getElementById("message").innerHTML = "Bienvenido" + data.nombre;
+                        document.getElementById("profileImg").setAttribute("src", data.imagen);
+                        document.getElementById("divLogin").classList.remove("active");
+                        document.getElementById("divLogin").classList.add("noactive");
+
+                        document.getElementById("divProfile").classList.remove("noactive");
+                        document.getElementById("divProfile").classList.add("active");
+
+                        document.getElementById("divSearch").classList.remove("noactive");
+                        document.getElementById("divSearch").classList.add("active");
+
+
+                        document.getElementById("btnLogout").addEventListener("click", function() {
+
+                            conectado = 0;
+                            
+                            document.getElementById("divLogin").classList.remove("noactive");
+                            document.getElementById("divLogin").classList.add("active");
+                            document.getElementById("divProfile").classList.remove("active");
+                            document.getElementById("divProfile").classList.add("noactive");
+                            document.getElementById("divSearch").classList.remove("active");
+                            document.getElementById("divSearch").classList.add("noactive");
+                            
+                        });
+                    } else {
+                        alert("error");
+                    }
                 });
             });
 
@@ -63,15 +92,16 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                         <div id="pelicula" class="card">
                                             <div class="card-image">
                                             <img src="${data.Search[index].Poster}" width="50px;">
-                                            </div>
-                                         <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
-
-                                            <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
+                                        </div>
+                                        <center>
+                                        <span class="card-title">${data.Search[index].Title}</span><br>
+                                        <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
+                                        </center>
+                                        <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
                                             <div class="modal-content">
-                                            <center>
-                                            <h4>${data.Search[index].Title}</h4>
-
-                                                <h3>Valoracion</p>
+                                                <center>
+                                                <h3>${data.Search[index].Title}</h3>
+                                                <h5>Valoracion</h5>
                                                 <div>
                                                     <label>
                                                         <input name"Favorito" type="checkbox"/>
@@ -85,31 +115,31 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                         <span>1</span>
                                                     </label>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <input name"valoracion" type="radio" value="2"/>
                                                         <span>2</span>
                                                     </label>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <input name"valoracion" type="radio" value="3"/>
                                                         <span>3</span>
                                                     </label>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <input name"valoracion" type="radio" value="4"/>
                                                         <span>4</span>
                                                     </label>
                                                     <label>
-                                                        <input name"valoracion" type="radio" value="1"/>
+                                                        <input name"valoracion" type="radio" value="5"/>
                                                         <span>5</span>
                                                     </label>
 
                                                 </div>
                                                 <div class"input-field">
-                                                    <textarea id="comentario" class="materialize-textarea" data-length="150"></textarea>
                                                     <label for="comentario">Comentario<label>
+                                                    <textarea id="comentario" class="materialize-textarea" data-length="150"></textarea> 
                                                 </div>
                                                 <div>
-                                                    <a class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</a>
+                                                    <a id="valoracion" class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</a>
                                                 </div>
-                                            </center>
+                                                </center>
                                             </div>
                                             <div class="modal-footer #1e88e5 blue darken-1">
                                               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
@@ -117,10 +147,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                         </div>
                                         </div> 
                                     </div>
-                                                         
-                                
-                    
-                    
                                         `;
 
 
