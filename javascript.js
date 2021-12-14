@@ -82,7 +82,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
 
                 console.log(data);
                 let htmlStr="";
-                for (let index = 0; index < 10; index++) {
+                for (let index = 0; index < 8; index++) {
 
 
                     htmlStr += `
