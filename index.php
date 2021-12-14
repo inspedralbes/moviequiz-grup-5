@@ -23,9 +23,10 @@ include "header.html";
           <div id="Registro">
               <div class="noactive" id="divPerfil">
                 <h5 id="mensaje"></h5>
-                <img id="perfileImg" src="#" />
+                <img id="perfileImg" src="#" width="50px" />
                 <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Log Out</button>
               </div>
+              
               <div method="post" id="divLogin" class="active">
                 <ul class="right hide-on-med-and-down">
                   <li>

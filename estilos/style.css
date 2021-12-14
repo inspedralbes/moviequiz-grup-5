@@ -13,3 +13,10 @@
     .noactive{
         display:none;
     }
+    #img{
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+    #divPerfil{
+        text-align: right;
+    }

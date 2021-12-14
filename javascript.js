@@ -33,28 +33,26 @@ let p = document.getElementById("pwd").value;
                         document.getElementById("divLogin").classList.add("noactive");
 
                         document.getElementById("divPerfil").classList.remove("noactive");
-                        document.getElementById("divProfile").classList.add("active");
+                        document.getElementById("divPerfil").classList.add("active");
 
 
-
-                        document.getElementById("btnLogout").addEventListener("click", function() {
-
-                            conectado = 0;
-                            
-                            document.getElementById("divLogin").classList.remove("noactive");
-                            document.getElementById("divLogin").classList.add("active");
-
-                            document.getElementById("divProfile").classList.remove("active");
-                            document.getElementById("divProfile").classList.add("noactive");
-
-                        });
                     } else {
-                        alert("error");
+                        alert("¡¡Nombre de Usuario o Contraseña incorrecta!!");
                     }
                 });
             });
+            
+document.getElementById("btnLogout").addEventListener("click", function() {
 
+    conectado = 0;
+                
+    document.getElementById("divLogin").classList.remove("noactive");
+    document.getElementById("divLogin").classList.add("active");
 
+    document.getElementById("divPerfil").classList.remove("active");
+    document.getElementById("divPerfil").classList.add("noactive");
+
+});
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
@@ -177,7 +175,7 @@ function modal(){
     
 
     document.getElementById("jugar").addEventListener("click",function(){
-        fetch('http://www.omdbapi.com/?s=${busqueda}&apikey=93763d43`')
+        fetch('http://www.omdbapi.com/?s=&apikey=93763d43')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
