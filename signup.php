@@ -13,9 +13,9 @@
 
 </head>
 <?php
-
- define('USER', 'root');
- define('PASSWORD', '');
+include ('./model/players.php');
+ define('USER', 'a20marsolluc_admin');
+ define('PASSWORD', 'Admin1234');
  define('HOST', 'localhost');
  define('DATABASE', 'prueba');
   
@@ -24,7 +24,8 @@
     } catch (PDOException $e) {
         exit("Error: " . $e->getMessage());
     }
- 
+$player=new players();
+
     session_start();
  
 if (isset($_POST['register'])) {
@@ -33,6 +34,8 @@ if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $password = $_POST['passwd'];
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+    //$player->insert()
  
     $query = $connection->prepare("SELECT * FROM usuario WHERE EMAIL=:email");
     $query->bindParam("email", $email, PDO::PARAM_STR);
@@ -51,6 +54,24 @@ if (isset($_POST['register'])) {
             echo '<center><p class="error">Algun paramentro es incorrecto!</p></center>';
         }
     }
+
+    /*private function read_user_data () {
+        $user_data = array();
+
+        if($_POST) {
+
+            if(array_key_exists("username",$_POST))
+                $user_data['username'] = $_POST['username'];
+
+            if(array_key_exists("email",$_POST))
+                $user_data['email'] = $_POST['email'];
+
+            if(array_key_exists("passwd",$_POST))
+                $user_data['passwd'] = $_POST['passwd'];
+        }
+
+        return $user_data;
+    }*/
 }
  
 ?>
