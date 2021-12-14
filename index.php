@@ -24,9 +24,12 @@ include "header.html";
                   
                   <h5 id="mensaje"></h5>
                   <br>
-                  <img id="perfileImg" src="#" width="50px" />
+                  <center>
+                  <img id="perfileImg" src="#" width="75px" />
                   <br>
                   <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Salir</button>
+                  </center>
+                  <br>
               </div>
               <div method="post" id="divLogin" class="active">
                 <ul class="right hide-on-med-and-down">
