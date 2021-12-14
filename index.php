@@ -20,7 +20,7 @@ include "header.html";
   <div>
     
           <div id="Registro">
-              <div class="col s2 m2 l2" class="noactive" id="divPerfil">
+              <div class="noactive" id="divPerfil">
                   
                   <h5 id="mensaje"></h5>
                   <br>
