@@ -13,8 +13,9 @@
     .noactive{
         display:none;
     }
-    #img{
-        border: 3px solid black;
-        border-radius: 10px;
+    #Registro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 

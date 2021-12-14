@@ -20,17 +20,15 @@ include "header.html";
   <div>
     
           <div id="Registro">
-              
-              <div method="post" id="divLogin" class="active">
-                <div class="col s2 m2 l2" class="noactive" id="divPerfil">
-                  <center>
+              <div class="col s2 m2 l2" class="noactive" id="divPerfil">
+                  
                   <h5 id="mensaje"></h5>
                   <br>
                   <img id="perfileImg" src="#" width="50px" />
                   <br>
                   <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Salir</button>
-                  </center>
-                </div>
+              </div>
+              <div method="post" id="divLogin" class="active">
                 <ul class="right hide-on-med-and-down">
                   <li>
                     <div class="input-field  ">
@@ -52,9 +50,8 @@ include "header.html";
                       <button class="btn waves-effect waves-light #1e88e5 blue darken-1"  name="action" id="registrarse">Registrarse</button>
                     </div>
                   </li>
-                </ul>
-                
-              </div>
+                </ul>   
+              </div>  
           </div>
   </div>
 
