@@ -17,7 +17,7 @@ include ('./model/players.php');
  define('USER', 'a20marsolluc_admin');
  define('PASSWORD', 'Admin1234');
  define('HOST', 'localhost');
- define('DATABASE', 'prueba');
+ define('DATABASE', 'a20marsolluc_moviequiz');
   
     try {
         $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
