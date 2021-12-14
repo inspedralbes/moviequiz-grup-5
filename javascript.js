@@ -168,18 +168,17 @@ function videos(){
 
     return htmlStr;
 };
-function modal(){
+
     let htmlStr="";
-    
 
     document.getElementById("juego").addEventListener("click",function(){
-        fetch('http://www.omdbapi.com/?i=&apikey=93763d43')
+        fetch('')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
         
 
-        let htmlStr="";
+        /*let htmlStr="";
 
         for (let i = 0; i < pelis.i; i++) {
         const element = pelis[i];        
@@ -199,8 +198,8 @@ function modal(){
                 </div>
                 </div>`;
         };
-        htmlStr += `<button id='enviar'>JUGAR</button>`;
+        htmlStr += `<button id='enviar'>JUGAR</button>`;*/
     });
     });
-};
+
 
