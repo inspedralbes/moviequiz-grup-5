@@ -59,18 +59,12 @@ document.getElementById("busqueda").addEventListener("click",function(){
 
 
                     htmlStr += `
-                                    <div class="col s4 m6 l6">
+                                    <div class="col s4 m6 l3">
                                         <div id="pelicula" class="card">
                                             <div class="card-image">
                                             <img src="${data.Search[index].Poster}" width="50px;">
                                             </div>
-                                         
-                                        </div> 
-                                    </div>
-                                                         
-                                `;
-                    //MODALS DE LAS PELICULAS PARA COMENTAR, NO FUNCIONA POR ALGUN MOTIVO
-                    /*<a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
+                                         <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
 
                                             <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
                                             <div class="modal-content">
@@ -120,9 +114,16 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                             <div class="modal-footer #1e88e5 blue darken-1">
                                               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
                                             </div>
-                                        </div>*/
-                                        
-         
+                                        </div>
+                                        </div> 
+                                    </div>
+                                                         
+                                
+                    
+                    
+                                        `;
+
+
                 }
                 document.getElementById("resultados").innerHTML = htmlStr;
                 //LE DIGO QUE ARRANQUE EL MODAL
