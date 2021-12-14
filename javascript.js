@@ -175,7 +175,7 @@ function modal(){
     
 
     document.getElementById("jugar").addEventListener("click",function(){
-        fetch('http://www.omdbapi.com/?s=&apikey=93763d43')
+        fetch('http://www.omdbapi.com/?i=&apikey=93763d43')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
