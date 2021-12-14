@@ -27,6 +27,7 @@ let p = document.getElementById("pwd").value;
                     if (data.exito == true) {
                         conectado = 1;
                         document.getElementById("mensaje").innerHTML = "Bienvenido a Movie Quiz 5 " + data.nombre;
+                        document.getElementById("mensaje").innerHTML ="<br></br>";
                         document.getElementById("perfileImg").setAttribute("src", data.imagen);
 
                         document.getElementById("divLogin").classList.remove("active");

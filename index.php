@@ -17,17 +17,20 @@
 include "header.html";
 
 ?>
-
   <div>
-    <center>
+    
           <div id="Registro">
-              <div class="noactive" id="divPerfil">
-                <h5 id="mensaje"></h5>
-                <img id="perfileImg" src="#" width="50px" />
-                <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Log Out</button>
-              </div>
               
+              <div class="noactive" id="divPerfil">
+
+                <h5 id="mensaje"></h5><br>
+                <img id="perfileImg" src="#" width="50px" />
+                <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Salir</button>
+
+              </div>
+
               <div method="post" id="divLogin" class="active">
+              
                 <ul class="right hide-on-med-and-down">
                   <li>
                     <div class="input-field  ">
@@ -50,11 +53,10 @@ include "header.html";
                     </div>
                   </li>
                 </ul>
+                
               </div>
           </div>
-    </center>
   </div>
-
 <div class="row ">
       
     <div class="col s12">
