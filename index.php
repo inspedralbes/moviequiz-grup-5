@@ -34,7 +34,7 @@ include "header.html";
                 <center>
                   <button id="busqueda" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Buscar</button>
                   <button id="delete" class="btn waves-effect waves-light red" type="button">Borrar</button>
-                  <a id="game" class="waves-effect waves-light btn modal-trigger" href="#modal1">Juego</a>
+                  <a id="juego" class="waves-effect waves-light btn modal-trigger" href="#modal1">Juego</a>
                 </center>
             </div>
         </nav>
@@ -72,7 +72,9 @@ include "header.html";
         </div>
     </div>
 </div>
-<div class="juego">
+<center><h3>Juego<h3></center>
+<div class="game">
+
 
 </div>
  

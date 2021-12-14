@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, {duration:2000});
+    var instances = M.Carousel.init(elems,{duration:200});
   });
 document.getElementById("delete").addEventListener("click",function(){
     let htmlStr="";
@@ -149,15 +149,37 @@ function videos(){
 };
 function modal(){
     let htmlStr="";
-    htmlStr+=`  
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-    </div>`
+    
+
+    document.getElementById("jugar").addEventListener("click",function(){
+        fetch('http://www.omdbapi.com/?s=${busqueda}&apikey=93763d43`')
+        .then(response => response.json() )
+        .then(data => {
+        console.log(data);
+        const pelis=data.peliculas;
+
+        let htmlStr="";
+
+        for (let i = 0; i < pelis.i; i++) {
+        const element = pelis[i];        
+
+        htmlStr += `<div class='card'>
+                <h2>${element.Nombre}</h2>
+                <img src='${element.Poster}'>
+                <div>
+                <input type="checkbox" name="opcion1" id="opcion1">
+                <label for="opcion1">${element.choice1}</label>
+                <input type="checkbox" name="opcion2" id="opcion2">
+                <label for="opcion2">${element.choice2}</label>
+                <input type="checkbox" name="opcion3" id="opcion3">
+                <label for="opcion3">${element.choice3}</label>
+                <input type="checkbox" name="opcion4" id="opcion4">
+                <label for="opcion4">${element.choice4}</label>
+                </div>
+                </div>`;
+        };
+        htmlStr += `<button id='enviar'>JUGAR</button>`;
+    });
+    });
 };
 
