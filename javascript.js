@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, {duration:2000});
+    var instances = M.Carousel.init(elems,{duration:200});
   });
 document.getElementById("delete").addEventListener("click",function(){
     let htmlStr="";
@@ -59,18 +59,12 @@ document.getElementById("busqueda").addEventListener("click",function(){
 
 
                     htmlStr += `
-                                    <div class="col s4 m6 l6">
+                                    <div class="col s4 m6 l3">
                                         <div id="pelicula" class="card">
                                             <div class="card-image">
                                             <img src="${data.Search[index].Poster}" width="50px;">
                                             </div>
-                                         
-                                        </div> 
-                                    </div>
-                                                         
-                                `;
-                    //MODALS DE LAS PELICULAS PARA COMENTAR, NO FUNCIONA POR ALGUN MOTIVO
-                    /*<a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
+                                         <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
 
                                             <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
                                             <div class="modal-content">
@@ -120,9 +114,16 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                             <div class="modal-footer #1e88e5 blue darken-1">
                                               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
                                             </div>
-                                        </div>*/
-                                        
-         
+                                        </div>
+                                        </div> 
+                                    </div>
+                                                         
+                                
+                    
+                    
+                                        `;
+
+
                 }
                 document.getElementById("resultados").innerHTML = htmlStr;
                 //LE DIGO QUE ARRANQUE EL MODAL
@@ -149,15 +150,37 @@ function videos(){
 };
 function modal(){
     let htmlStr="";
-    htmlStr+=`  
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-    </div>`
+    
+
+    document.getElementById("jugar").addEventListener("click",function(){
+        fetch('http://www.omdbapi.com/?s=${busqueda}&apikey=93763d43`')
+        .then(response => response.json() )
+        .then(data => {
+        console.log(data);
+        const pelis=data.peliculas;
+
+        let htmlStr="";
+
+        for (let i = 0; i < pelis.i; i++) {
+        const element = pelis[i];        
+
+        htmlStr += `<div class='card'>
+                <h2>${element.Nombre}</h2>
+                <img src='${element.Poster}'>
+                <div>
+                <input type="checkbox" name="opcion1" id="opcion1">
+                <label for="opcion1">${element.choice1}</label>
+                <input type="checkbox" name="opcion2" id="opcion2">
+                <label for="opcion2">${element.choice2}</label>
+                <input type="checkbox" name="opcion3" id="opcion3">
+                <label for="opcion3">${element.choice3}</label>
+                <input type="checkbox" name="opcion4" id="opcion4">
+                <label for="opcion4">${element.choice4}</label>
+                </div>
+                </div>`;
+        };
+        htmlStr += `<button id='enviar'>JUGAR</button>`;
+    });
+    });
 };
 
