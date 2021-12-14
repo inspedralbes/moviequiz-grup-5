@@ -82,7 +82,7 @@ include "header.html";
                 </center>
               </div>
         </div>
-        <div class="col s2 m2 l2 noactive" id="divPerfil">
+        <div class="col s2 m2 l2" class="noactive" id="divPerfil">
               <h5 id="mensaje"></h5>
               <br>
               <img id="perfileImg" src="#" width="50px" />
