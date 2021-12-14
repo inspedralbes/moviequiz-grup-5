@@ -18,6 +18,7 @@ $player->select($comp["username"]);                                             
     $myJSON = json_encode($arr);
     echo $myJSON;
 
+
 }else{
     $arr = array ('exito'=>false);
 
