@@ -22,7 +22,15 @@ include "header.html";
           <div id="Registro">
               
               <div method="post" id="divLogin" class="active">
-              
+                <div class="col s2 m2 l2" class="noactive" id="divPerfil">
+                  <center>
+                  <h5 id="mensaje"></h5>
+                  <br>
+                  <img id="perfileImg" src="#" width="50px" />
+                  <br>
+                  <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Salir</button>
+                  </center>
+                </div>
                 <ul class="right hide-on-med-and-down">
                   <li>
                     <div class="input-field  ">
@@ -68,7 +76,7 @@ include "header.html";
         </nav>
         <br><br>
     </div>
-        <div class="col s10 m10 l10">
+        <div class="col s12 m12 l12">
 
               <center>
                 <h4>Peliculas</h4>
@@ -81,15 +89,6 @@ include "header.html";
                 </video>
                 </center>
               </div>
-        </div>
-        <div class="col s2 m2 l2" class="noactive" id="divPerfil">
-              <h5 id="mensaje"></h5>
-              <br>
-              <img id="perfileImg" src="#" width="50px" />
-              <br>
-              <center>
-              <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Salir</button>
-              </center>
         </div>
         
 
