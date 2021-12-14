@@ -1,0 +1,1 @@
+Per l'esprint 3 volvem tenir en marxa el joc
