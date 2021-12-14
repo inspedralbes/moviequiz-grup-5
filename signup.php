@@ -13,6 +13,11 @@
 
 </head>
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include ('./model/players.php');
  define('USER', 'a20marsolluc_admin');
  define('PASSWORD', 'Admin1234');
@@ -42,12 +47,18 @@ if (isset($_POST['register'])) {
     $query->execute();
 
     if ($query->rowCount() == 0) {
+
+        //echo($username);
+
         $query = $connection->prepare("INSERT INTO usuario(USERNAME,PASSWD,EMAIL) VALUES (:username,:password_hash,:email)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
         $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
         $query->bindParam("email", $email, PDO::PARAM_STR);
         $result = $query->execute();
- 
+
+        //la vaina d abajo pa mirar errores
+        //echo($query2->errorCode() );
+
         if ($result) {
             echo '<center><p class="flow-text centrao">Te has registrado correctamente!!</p></center>';
         } else {
