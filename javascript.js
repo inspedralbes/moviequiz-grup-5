@@ -26,16 +26,15 @@ let p = document.getElementById("pwd").value;
                     console.log(data);
                     if (data.exito == true) {
                         conectado = 1;
-                        document.getElementById("message").innerHTML = "Bienvenido" + data.nombre;
-                        document.getElementById("profileImg").setAttribute("src", data.imagen);
+                        document.getElementById("mensaje").innerHTML = "Bienvenido a Movie Quiz 5 " + data.nombre;
+                        document.getElementById("perfileImg").setAttribute("src", data.imagen);
+                        
                         document.getElementById("divLogin").classList.remove("active");
                         document.getElementById("divLogin").classList.add("noactive");
 
-                        document.getElementById("divProfile").classList.remove("noactive");
+                        document.getElementById("divPerfil").classList.remove("noactive");
                         document.getElementById("divProfile").classList.add("active");
 
-                        document.getElementById("divSearch").classList.remove("noactive");
-                        document.getElementById("divSearch").classList.add("active");
 
 
                         document.getElementById("btnLogout").addEventListener("click", function() {
@@ -44,11 +43,10 @@ let p = document.getElementById("pwd").value;
                             
                             document.getElementById("divLogin").classList.remove("noactive");
                             document.getElementById("divLogin").classList.add("active");
+
                             document.getElementById("divProfile").classList.remove("active");
                             document.getElementById("divProfile").classList.add("noactive");
-                            document.getElementById("divSearch").classList.remove("active");
-                            document.getElementById("divSearch").classList.add("noactive");
-                            
+
                         });
                     } else {
                         alert("error");

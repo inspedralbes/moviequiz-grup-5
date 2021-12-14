@@ -8,8 +8,8 @@
         background-color: black;
     }
     .active{
-        display:none;
+        display:block;
     }
     .noactive{
-        display:block;
+        display:none;
     }

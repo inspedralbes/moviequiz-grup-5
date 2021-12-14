@@ -36,42 +36,60 @@ include "header.html";
                   <button id="delete" class="btn waves-effect waves-light red" type="button">Borrar</button>
                   <button id="Juego" class="btn waves-effect waves-light" type="button">Jugar</button>
                 </center>
-            </div>
+              </div>
         </nav>
         <br><br>
+    </div>
+        <div class="col s8 m8 l8">
 
-        <div class="col s10 m10 l10">
+              <center>
+                <h4>Peliculas</h4>
+              </center>
+            
+              <div id="resultados">
+                <center>
+                <video width="1000" height="500" id="video" autoplay muted>
+                <source src="/vid/video1.mp4" type="video/mp4">
+                </video>
+                </center>
+              </div>
+        </div>
+        <div class="col s4 m4 l4">
 
           <center>
-            <h4>Peliculas</h4>
-          </center>
-        
-          <div id="resultados">
-            <center>
-            <video width="1000" height="500" id="video" autoplay muted>
-            <source src="/vid/video1.mp4" type="video/mp4">
-            </video>
-            <center>
+          <div id="Registro">
+              <div class="noactive" id="divPerfil">
+                <h5 id="mensaje"></h5>
+                <img id="perfileImg" src="#" />
+                <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Log Out</button>
+              </div>
+              <div method="post" id="divLogin" class="active">
+                <ul class="right hide-on-med-and-down">
+                  <li>
+                    <div class="input-field  ">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="username" type="text" class="validate">
+                      <label for="username">Usuario</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="input-field  ">
+                      <i class="material-icons prefix">https</i>
+                      <input id="pwd" type="password" class="validate">
+                      <label for="pwd">Contraseña</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="input-field  ">
+                      <button class="btn waves-effect waves-light #64b5f6 blue lighten-2"  id="login" name="action">Entrar</button>
+                      <button class="btn waves-effect waves-light #64b5f6 blue lighten-2"  name="action" id="registrarse">Registrarse</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
           </div>
+      </div>
 
-        </div>
-        <div class="col s2 m2 l2">
-
-              <center><h4>Estrenos</h4><center>
- 
-            <div id="Ult_Peliculas">
-               <div class="carousel">
-                 <a class="carousel-item" href="#one!"><img src="img/img1.jpg"></a>
-                 <a class="carousel-item" href="#two!"><img src="img/img2.jpg"></a>
-                 <a class="carousel-item" href="#three!"><img src="img/img3.jpg"></a>
-                 <a class="carousel-item" href="#four!"><img src="img/img4.jpg"></a>
-                 <a class="carousel-item" href="#five!"><img src="img/img5.jpg"></a>
-                 <a class="carousel-item" href="#six!"><img src="img/img6.jpg"></a>
-               </div>
-            </div>
-        </div>
-    </div>
-</div>
 <center><h3>Juego<h3></center>
 <div class="game">
 
