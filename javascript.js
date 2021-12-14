@@ -38,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 document.getElementById("delete").addEventListener("click",function(){
     let htmlStr="";
-    document.get
-    ementById("resultados").innerHTML = htmlStr;
+    document.getElementById("resultados").innerHTML = htmlStr;
     videos();
 });
 document.getElementById("registrarse").addEventListener("click",function(){
@@ -148,5 +147,18 @@ function videos(){
     document.getElementById("resultados").innerHTML = htmlStr;
 
     return htmlStr;
+};
+function modal(){
+    let htmlStr="";
+    htmlStr+=`  
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>`
 };
 
