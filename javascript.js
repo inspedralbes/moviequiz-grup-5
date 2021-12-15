@@ -184,10 +184,8 @@ function videos(){
 
     return htmlStr;
 };
-function game(){
-
     document.getElementById("juego").addEventListener("click",function(){
-        fetch('Json de mario')
+        fetch('output_generar_partida.json')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
@@ -196,23 +194,33 @@ function game(){
 
         for (let i = 0; i < 5; i++) {
         
-        htmlStr += `<div class='card'>
-                        <h2>${element.Nombre}</h2>
-                        <img src='${element.Poster}'>
-                        <div>
-                        <input type="checkbox" name="opcion1" id="opcion1">
-                        <label for="opcion1">${element.choice1}</label>
-                        <input type="checkbox" name="opcion2" id="opcion2">
-                        <label for="opcion2">${element.choice2}</label>
-                        <input type="checkbox" name="opcion3" id="opcion3">
-                        <label for="opcion3">${element.choice3}</label>
-                        <input type="checkbox" name="opcion4" id="opcion4">
-                        <label for="opcion4">${element.choice4}</label>
-                        </div>
-                    </div>`;
+        htmlStr += `
+      
+        <div class="col l12 #1e88e5 blue darken-1" id="game">
+        <center>
+            <h5>${data.peliculas[i].Nombre}</h5>
+            <img src='${data.peliculas[i].Poster}' width="200px">
+            <div>
+            <form>
+                <input type="radio" name="game" id="opcion1">
+                <label for="opcion1">${data.peliculas[i].choice1}</label>
+                <input type="radio" name="game" id="opcion2">
+                <label for="opcion2">${data.peliculas[i].choice2}</label>
+                <input type="radio" name="game" id="opcion3">
+                <label for="opcion3">${data.peliculas[i].choice3}</label>
+                <input type="radio" name="game" id="opcion4">
+                <label for="opcion4">${data.peliculas[i].choice4}</label>
+            </form>
+            </div>
+        </center>
+        </div><br>`;
         };
-        htmlStr += `<button id='enviar'>JUGAR</button>`;
+        htmlStr += `<br><center>
+        <button id='enviar' class="btn waves-effect waves-light #1e88e5 blue darken-1">Finalizar</button>
+        <button id="deleteGame" class="btn waves-effect waves-light red" type="button" onclick="videos()">Salir</button>
+        </center>`;
+        document.getElementById("resultados").innerHTML = htmlStr;
     });
     });
-}
+
 

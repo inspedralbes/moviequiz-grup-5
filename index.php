@@ -17,83 +17,86 @@
 include "header.html";
 
 ?>
-  <div>
-    
-          <div id="Registro">
-              <div class="noactive" id="divPerfil">
-                  
-                  <h5 id="mensaje"></h5>
-                  <br>
-                  <center>
-                  <img id="perfileImg" src="#" width="75px" />
-                  <br>
-                  <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Salir</button>
-                  </center>
-                  <br>
-              </div>
-              <div method="post" id="divLogin" class="active">
-                <ul class="right hide-on-med-and-down">
-                  <li>
-                    <div class="input-field  ">
-                      <i class="material-icons prefix">account_circle</i>
-                      <input id="username" type="text" class="validate">
-                      <label for="username">Usuario</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="input-field  ">
-                      <i class="material-icons prefix">https</i>
-                      <input id="pwd" type="password" class="validate">
-                      <label for="pwd">Contraseña</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="input-field ">
-                      <center>
-                      <button class="btn waves-effect waves-light #1e88e5 blue darken-1"  id="login" name="action">Entrar</button>
-                      <button class="btn waves-effect waves-light #1e88e5 blue darken-1"  name="action" id="registrarse">Registrarse</button>
-                      <center>
-                    </div>
-                  </li>
-                </ul>   
-              </div>  
-          </div>
-  </div>
-
-<div class="row">
-    <div class="col s12 " >
-        <nav class="#1e88e5 blue darken-1 noactive" id="navbar">
-              <div id="barraBusqueda"  class="nav-wrapper noactive">
-                <div class="input-field #1e88e5 blue darken-1">
-                  <input id="busquedaPeli" type="search">
-                  <label class="label-icon"><i class="material-icons">search</i></label>
-                  <i class="material-icons">close</i>
-                </div>
+<div class="container">
+    <div>
+        <div id="Registro">
+            <div class="noactive" id="divPerfil">
+                
+                <h5 id="mensaje"></h5>
+                <br>
                 <center>
-                  <button id="busqueda" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Buscar</button>
-                  <button id="delete" class="btn waves-effect waves-light red" type="button">Borrar</button>
+                <img id="perfileImg" src="#" width="75px" />
+                <br>
+                <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Salir</button>
                 </center>
+                <br>
+            </div>
+            <div method="post" id="divLogin" class="active">
+              <ul class="right hide-on-med-and-down">
+                <li>
+                  <div class="input-field  ">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="username" type="text" class="validate">
+                    <label for="username">Usuario</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-field  ">
+                    <i class="material-icons prefix">https</i>
+                    <input id="pwd" type="password" class="validate">
+                    <label for="pwd">Contraseña</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-field ">
+                    <center>
+                    <button class="btn waves-effect waves-light #1e88e5 blue darken-1"  id="login" name="action">Entrar</button>
+                    <button class="btn waves-effect waves-light #1e88e5 blue darken-1"  name="action" id="registrarse">Registrarse</button>
+                    <center>
+                  </div>
+                </li>
+              </ul>   
+            </div>  
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col s12 " >
+      <nav class="#1e88e5 blue darken-1 noactive" id="navbar">
+            <div id="barraBusqueda"  class="nav-wrapper noactive">
+              <div class="input-field #1e88e5 blue darken-1">
+                <input id="busquedaPeli" type="search">
+                <label class="label-icon"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
               </div>
-        </nav>
-        <br><br>
+              <center>
+                <button id="busqueda" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Buscar</button>
+                <button id="delete" class="btn waves-effect waves-light red" type="button">Borrar</button>
+              </center>
+            </div>
+      </nav>
+      <br><br>
     </div>
     <br><br>
-        <div class="col s12 m12 l12">
+      <div class="col s12 m12 l12">
 
+            <center>
+              <h4>Peliculas</h4>
+              <button id="juego" class="btn waves-effect waves-light" type="button">Jugar</button>
+              <br>
+            </center>
+          
+            <div class="row" id="resultados">
               <center>
-                <h4>Peliculas</h4>
-                <button id="juego" class="btn waves-effect waves-light" type="button">Jugar</button>
+              <video width="1000" height="500" id="video" autoplay muted>
+              <source src="/vid/video1.mp4" type="video/mp4">
+              </video>
               </center>
-            
-              <div id="resultados">
-                <center>
-                <video width="1000" height="500" id="video" autoplay muted>
-                <source src="/vid/video1.mp4" type="video/mp4">
-                </video>
-                </center>
-              </div>
-        </div>
-        
+            </div>
+      </div>
+    </div>      
+</div>  
+ 
 
 <script type="text/javascript" src="javascript.js"></script>
 
