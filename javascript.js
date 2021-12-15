@@ -77,7 +77,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
             return res.json();
         }).then(function(data){
 
-                console.log(data);
                 let htmlStr="";
                 for (let index = 0; index < 8; index++) {
 
@@ -86,7 +85,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                     <div class="col s4 m6 l3">
                                         <div id="pelicula" class="card">
                                             <div class="card-image">
-                                            <img src="${data.Search[index].Poster}" width="50px;">
+                                            <img src="${data.Search[index].Poster}">
                                         </div>
                                         <center>
                                         <span class="card-title">${data.Search[index].Title}</span><br>
@@ -169,18 +168,17 @@ function videos(){
 
     return htmlStr;
 };
-function modal(){
-    let htmlStr="";
-    
 
-    document.getElementById("jugar").addEventListener("click",function(){
-        fetch('http://www.omdbapi.com/?i=&apikey=93763d43')
+    let htmlStr="";
+
+    document.getElementById("juego").addEventListener("click",function(){
+        fetch('')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
-        const pelis=data.peliculas;
+        
 
-        let htmlStr="";
+        /*let htmlStr="";
 
         for (let i = 0; i < pelis.i; i++) {
         const element = pelis[i];        
@@ -200,8 +198,8 @@ function modal(){
                 </div>
                 </div>`;
         };
-        htmlStr += `<button id='enviar'>JUGAR</button>`;
+        htmlStr += `<button id='enviar'>JUGAR</button>`;*/
     });
     });
-};
+
 
