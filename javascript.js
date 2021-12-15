@@ -38,6 +38,9 @@ let p = document.getElementById("pwd").value;
                         document.getElementById("barraBusqueda").classList.remove("noactive");
                         document.getElementById("barraBusqueda").classList.add("active");
 
+                        document.getElementById("navbar").classList.remove("noactive");
+                        document.getElementById("navbar").classList.add("active");
+
                     } else {
                         alert("¡¡Nombre de Usuario o Contraseña incorrecta!!");
                     }
@@ -54,9 +57,13 @@ document.getElementById("btnLogout").addEventListener("click", function() {
     document.getElementById("divPerfil").classList.remove("active");
     document.getElementById("divPerfil").classList.add("noactive");
 
-    document.getElementById("barraBusqueda").classList.remove("active");
-    document.getElementById("barraBusqueda").classList.add("noactive");
+    document.getElementById("barraBusqueda").classList.remove("noactive");
+    document.getElementById("barraBusqueda").classList.add("active");
 
+    document.getElementById("navbar").classList.remove("active");
+    document.getElementById("navbar").classList.add("noactive");
+    
+    document.getElementById("juego").classList.add("active");
 });
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
