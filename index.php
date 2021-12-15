@@ -59,9 +59,9 @@ include "header.html";
   </div>
 
 <div class="row ">
-    <div class="col s12">
+    <div class="col s12" id="barraBusqueda">
         <nav>
-              <div  id="barraBusqueda" class="nav-wrapper noactive">
+              <div   class="nav-wrapper noactive">
                 <div class="input-field #1e88e5 blue darken-1">
                   <input id="busquedaPeli" type="search">
                   <label class="label-icon"><i class="material-icons">search</i></label>

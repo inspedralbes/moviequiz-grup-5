@@ -54,6 +54,9 @@ document.getElementById("btnLogout").addEventListener("click", function() {
     document.getElementById("divPerfil").classList.remove("active");
     document.getElementById("divPerfil").classList.add("noactive");
 
+    document.getElementById("barraBusqueda").classList.remove("active");
+    document.getElementById("barraBusqueda").classList.add("noactive");
+
 });
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
