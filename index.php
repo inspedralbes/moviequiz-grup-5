@@ -61,7 +61,7 @@ include "header.html";
 <div class="row ">
     <div class="col s12">
         <nav>
-              <div class="nav-wrapper">
+              <div  id="barraBusqueda" class="nav-wrapper noactive">
                 <div class="input-field #1e88e5 blue darken-1">
                   <input id="busquedaPeli" type="search">
                   <label class="label-icon"><i class="material-icons">search</i></label>

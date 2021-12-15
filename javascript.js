@@ -35,6 +35,9 @@ let p = document.getElementById("pwd").value;
                         document.getElementById("divPerfil").classList.remove("noactive");
                         document.getElementById("divPerfil").classList.add("active");
 
+                        document.getElementById("barraBusqueda").classList.remove("noactive");
+                        document.getElementById("barraBusqueda").classList.add("active");
+
                     } else {
                         alert("¡¡Nombre de Usuario o Contraseña incorrecta!!");
                     }
@@ -89,7 +92,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                         </div>
                                         <center>
                                         <span class="card-title">${data.Search[index].Title}</span><br>
-                                        <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}"><i class="material-icons">add</i></a>
+                                        <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}" ><i class="material-icons">add</i></a>
                                         </center>
                                         <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
                                             <div class="modal-content">
@@ -97,41 +100,45 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                 <h3>${data.Search[index].Title}</h3>
                                                 <h5>Valoracion</h5>
                                                 <div>
-                                                    <label>
-                                                        <input name="Favorito" type="checkbox"/>
-                                                        <span>Marcar como favorito</span>
-                                                    </label>
-                                                </div>
-                                                <div>
-                                                    <br>
-                                                    <label>
-                                                        <input name="valoracion" type="radio" value="1"/>
-                                                        <span>1</span>
-                                                    </label>
-                                                    <label>
-                                                        <input name="valoracion" type="radio" value="2"/>
-                                                        <span>2</span>
-                                                    </label>
-                                                    <label>
-                                                        <input name="valoracion" type="radio" value="3"/>
-                                                        <span>3</span>
-                                                    </label>
-                                                    <label>
-                                                        <input name="valoracion" type="radio" value="4"/>
-                                                        <span>4</span>
-                                                    </label>
-                                                    <label>
-                                                        <input name="valoracion" type="radio" value="5"/>
-                                                        <span>5</span>
-                                                    </label>
-
+                                                <form method="post">
+                                                    <div>
+                                                        
+                                                        <label>
+                                                            <input id="favorito" name="Favorito" type="checkbox"/>
+                                                            <span>Marcar como favorito</span>
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <br>
+                                                        <label>
+                                                            <input name="valoracion" type="radio" value="1"/>
+                                                            <span>1</span>
+                                                        </label>
+                                                        <label>
+                                                            <input name="valoracion" type="radio" value="2"/>
+                                                            <span>2</span>
+                                                        </label>
+                                                        <label>
+                                                            <input name="valoracion" type="radio" value="3"/>
+                                                            <span>3</span>
+                                                        </label>
+                                                        <label>
+                                                            <input name="valoracion" type="radio" value="4"/>
+                                                            <span>4</span>
+                                                        </label>
+                                                        <label>
+                                                            <input name="valoracion" type="radio" value="5"/>
+                                                            <span>5</span>
+                                                        </label>
+                                                    </div>
+                                                <form>    
                                                 </div>
                                                 <div class"input-field">
                                                     <label for="comentario">Comentario<label>
-                                                    <textarea id="comentario" class="materialize-textarea" data-length="150"></textarea> 
+                                                    <textarea id="comentario" class="materialize-textarea" data-length="200"></textarea> 
                                                 </div>
                                                 <div>
-                                                    <a id="valoracion" class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</a>
+                                                    <button id="valoracion" class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</button>
                                                 </div>
                                                 </center>
                                             </div>
@@ -168,38 +175,35 @@ function videos(){
 
     return htmlStr;
 };
-
-    let htmlStr="";
+function game(){
 
     document.getElementById("juego").addEventListener("click",function(){
-        fetch('')
+        fetch('Json de mario')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
         
+        let htmlStr="";
 
-        /*let htmlStr="";
-
-        for (let i = 0; i < pelis.i; i++) {
-        const element = pelis[i];        
-
+        for (let i = 0; i < 5; i++) {
+        
         htmlStr += `<div class='card'>
-                <h2>${element.Nombre}</h2>
-                <img src='${element.Poster}'>
-                <div>
-                <input type="checkbox" name="opcion1" id="opcion1">
-                <label for="opcion1">${element.choice1}</label>
-                <input type="checkbox" name="opcion2" id="opcion2">
-                <label for="opcion2">${element.choice2}</label>
-                <input type="checkbox" name="opcion3" id="opcion3">
-                <label for="opcion3">${element.choice3}</label>
-                <input type="checkbox" name="opcion4" id="opcion4">
-                <label for="opcion4">${element.choice4}</label>
-                </div>
-                </div>`;
+                        <h2>${element.Nombre}</h2>
+                        <img src='${element.Poster}'>
+                        <div>
+                        <input type="checkbox" name="opcion1" id="opcion1">
+                        <label for="opcion1">${element.choice1}</label>
+                        <input type="checkbox" name="opcion2" id="opcion2">
+                        <label for="opcion2">${element.choice2}</label>
+                        <input type="checkbox" name="opcion3" id="opcion3">
+                        <label for="opcion3">${element.choice3}</label>
+                        <input type="checkbox" name="opcion4" id="opcion4">
+                        <label for="opcion4">${element.choice4}</label>
+                        </div>
+                    </div>`;
         };
-        htmlStr += `<button id='enviar'>JUGAR</button>`;*/
+        htmlStr += `<button id='enviar'>JUGAR</button>`;
     });
     });
-
+}
 
