@@ -63,7 +63,6 @@ document.getElementById("btnLogout").addEventListener("click", function() {
     document.getElementById("navbar").classList.remove("active");
     document.getElementById("navbar").classList.add("noactive");
     
-    document.getElementById("juego").classList.add("active");
 });
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
