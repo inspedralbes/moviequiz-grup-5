@@ -173,14 +173,26 @@ document.getElementById("busqueda").addEventListener("click",function(){
 
 function videos(){
     let htmlStr="";
-    htmlStr+=`
+    htmlStr+=`   
         <center>
-        <video width="1000" height="500" id="video" autoplay muted>
-        <source src="/vid/video2.mp4" type="video/mp4">
-        </video>
-        <center>
+            <h4>pel·lícules més populars</h4>
+            <div class="carousel">
+                <a class="carousel-item"><img src="img/img1.jpg"></a>
+                <a class="carousel-item"><img src="img/img2.jpg"></a>
+                <a class="carousel-item"><img src="img/img3.jpg"></a>
+                <a class="carousel-item"><img src="img/img4.jpg"></a>
+                <a class="carousel-item"><img src="img/img5.jpg"></a>
+                <a class="carousel-item"><img src="img/img6.jpg"></a>
+            </div> 
+            <h4>Trailers</h4> 
+            <video width="1000" height="500" id="video" autoplay muted>
+            <source src="/vid/video1.mp4" type="video/mp4">
+            </video>
+        </center>
     `;
     document.getElementById("resultados").innerHTML = htmlStr;
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems,{duration:200});
 
     return htmlStr;
 };
@@ -191,7 +203,10 @@ function videos(){
         console.log(data);
         
         let htmlStr="";
-
+        htmlStr+=`
+        <div id="modalGame" class="modal">
+        <div class="modal-content">
+        `;
         for (let i = 0; i < 5; i++) {
         
         htmlStr += `
@@ -201,7 +216,7 @@ function videos(){
             <h5>${data.peliculas[i].Nombre}</h5>
             <img src='${data.peliculas[i].Poster}' width="200px">
             <div>
-            <form>
+            <form method="post">
                 <input type="radio" name="game" id="opcion1">
                 <label for="opcion1">${data.peliculas[i].choice1}</label>
                 <input type="radio" name="game" id="opcion2">
@@ -213,12 +228,19 @@ function videos(){
             </form>
             </div>
         </center>
-        </div><br>`;
+        </div><br>  
+        `;
         };
-        htmlStr += `<br><center>
-        <button id='enviar' class="btn waves-effect waves-light #1e88e5 blue darken-1">Finalizar</button>
-        <button id="deleteGame" class="btn waves-effect waves-light red" type="button" onclick="videos()">Salir</button>
-        </center>`;
+        htmlStr += `
+        </div>
+        <div class="modal-footer">
+        <center>
+            <button id='enviar' class="btn waves-effect waves-light #1e88e5 blue darken-1">Finalizar</button>
+            <button id="deleteGame" class="btn waves-effect waves-light red" type="button">Salir</button>
+        </center>
+        </div>
+      </div>
+`;
         document.getElementById("resultados").innerHTML = htmlStr;
     });
     });

@@ -81,16 +81,26 @@ include "header.html";
       <div class="col s12 m12 l12">
 
             <center>
-              <h4>Peliculas</h4>
-              <button id="juego" class="btn waves-effect waves-light" type="button">Jugar</button>
+              <h4>Juego de Peliculas</h4>
+              <button id="juego" class="btn waves-effect waves-light" type="button" href="#modalGame">Jugar</button>
               <br>
             </center>
           
             <div class="row" id="resultados">
               <center>
-              <video width="1000" height="500" id="video" autoplay muted>
-              <source src="/vid/video1.mp4" type="video/mp4">
-              </video>
+                  <h4>pel·lícules mas populares</h4>
+                  <div class="carousel">
+                    <a class="carousel-item"><img src="img/img1.jpg"></a>
+                    <a class="carousel-item"><img src="img/img2.jpg"></a>
+                    <a class="carousel-item"><img src="img/img3.jpg"></a>
+                    <a class="carousel-item"><img src="img/img4.jpg"></a>
+                    <a class="carousel-item"><img src="img/img5.jpg"></a>
+                    <a class="carousel-item"><img src="img/img6.jpg"></a>
+                  </div> 
+                  <h4>Trailers</h4> 
+                  <video width="1000" height="500" id="video" autoplay muted>
+                  <source src="/vid/video1.mp4" type="video/mp4">
+                  </video>
               </center>
             </div>
       </div>
