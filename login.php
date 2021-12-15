@@ -3,7 +3,6 @@ include ('./model/players.php');
 
 if(!empty($_POST['username']) && !empty($_POST['passwd'])){
 $user = $_POST['username'];
-
 $pwd = $_POST['passwd'];
 $comp=array ("username" => $user, "passwd" => $pwd);
 $player=new players();                                                               //$password_hash = password_hash($pwd,PASSWORD_BCRYPT);
@@ -29,11 +28,4 @@ $player->select($comp["username"]);                                             
 
 ?>
 
-<?php
-/*require_once("controller_MQ.php");
-$controller = new controller();
-$resposta = $controller->login();
-$res = json_encode($resposta);
-echo $res;
-*/
-?>
+

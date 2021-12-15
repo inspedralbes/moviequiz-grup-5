@@ -65,6 +65,9 @@ if (isset($_POST['register'])) {
             echo '<center><p class="error">Algun paramentro es incorrecto!</p></center>';
         }
     }
+    else{
+        echo '<center><p class="flow-text centrao">USUARIO DUPLICADO</p></center>';
+    }
 
     /*private function read_user_data () {
         $user_data = array();
