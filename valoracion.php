@@ -35,10 +35,9 @@ session_start();
 
 if (isset($_POST['register'])) {
 
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['passwd'];
-    $password_hash = password_hash($password, PASSWORD_BCRYPT);
+    $fav = $_POST['favorito'];
+    $valoracion = $_POST['valoracion'];
+    $comentario = $_POST['comentario'];
 
     //$player->insert()
 
@@ -49,24 +48,24 @@ if (isset($_POST['register'])) {
     if ($query->rowCount() == 0) {
 
         //echo($username);
-
-        $query = $connection->prepare("INSERT INTO usuario(USERNAME,PASSWD,EMAIL) VALUES (:username,:password_hash,:email)");
-        $query->bindParam("username", $username, PDO::PARAM_STR);
-        $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
-        $query->bindParam("email", $email, PDO::PARAM_STR);
+                                                                            //BUSCAR FORMA D INTRODUCIR USUAIRO Y PELICULA
+        $query = $connection->prepare("INSERT INTO valoracio_pelicules(FAVORIT,VALORACIO,COMENTARI) VALUES (:favorito,:valoracion,:comentario)");
+        $query->bindParam("favorito", $fav, PDO::PARAM_STR);
+        $query->bindParam("valoracion", $valoracion, PDO::PARAM_STR);
+        $query->bindParam("comentario", $comentario, PDO::PARAM_STR);
         $result = $query->execute();
 
         //la vaina d abajo pa mirar errores
         //echo($query2->errorCode() );
 
         if ($result) {
-            echo '<center><p class="flow-text centrao">Te has registrado correctamente!!</p></center>';
+            echo '<center><p class="flow-text centrao">Datos guardados correctamente!!</p></center>';
         } else {
-            echo '<center><p class="error">Algun paramentro es incorrecto!</p></center>';
+            echo '<center><p class="error">No se han podido guardar tus datos!</p></center>';
         }
     }
     else{
-        echo '<center><p class="flow-text centrao">USUARIO DUPLICADO</p></center>';
+        echo '<center><p class="flow-text centrao">Ya has introducido datos previamente</p></center>';
     }
 }
 

@@ -171,6 +171,13 @@ document.getElementById("busqueda").addEventListener("click",function(){
         });
     });
 
+/*document.getElementById("favorito").addEventListener("click",function(){
+ favorito=1;
+ if (favorito=1){
+
+ }
+});*/
+
 function videos(){
     let htmlStr="";
     htmlStr+=`   
