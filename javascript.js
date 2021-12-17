@@ -90,7 +90,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
         fetch(`http://www.omdbapi.com/?s=${busqueda}&apikey=93763d43`).then(function(res){
             return res.json();
         }).then(function(data){
-
+            
                 let htmlStr="";
                 for (let index = 0; index < 8; index++) {
 
@@ -103,7 +103,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                             <img src="${data.Search[index].Poster}">
                                         </div>
                                         <center>
-                                        <span class="card-title">${data.Search[index].Title}</span><br>
+                                        <span class="card-title">${data.Search[index].Title} -${data.Search[index].Year}</span><br>
                                         <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}" ><i class="material-icons">add</i></a>
                                         </center>
                                         <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
