@@ -90,10 +90,9 @@ document.getElementById("busqueda").addEventListener("click",function(){
         fetch(`http://www.omdbapi.com/?s=${busqueda}&apikey=93763d43`).then(function(res){
             return res.json();
         }).then(function(data){
-            
+
                 let htmlStr="";
                 for (let index = 0; index < 8; index++) {
-
 
                     htmlStr += `
                                     <div class="col s4 m6 l3">
@@ -104,7 +103,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                         </div>
                                         <center>
                                         <span class="card-title">${data.Search[index].Title} -${data.Search[index].Year}</span><br>
-                                        <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" href="#modal${index}" ><i class="material-icons">add</i></a>
+                                        <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1 resultados-modal" href="#modal${index}" ><i class="material-icons">add</i></a>
                                         </center>
                                         <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
                                             <div class="modal-content">
@@ -154,7 +153,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                 </center>
                                             </div>
                                             <div class="modal-footer #1e88e5 blue darken-1">
-                                              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
+                                              <a href="#!" class="modal-close waves-effect waves-green btn-flat Guardar-valoracion">Atras</a>
                                             </div>
                                         </div>
                                         </div> 
@@ -247,4 +246,27 @@ function videos(){
     });
     });
 
+    document.getElementById("resultados-modal").addEventListener("click", function(e) {
+        console.log(e.target);
+        if (e.target.classList.contains("Guardar-valoracion")) {
+            
+            console.log("Añado la pelicula" + e.target.parentNode.id);
+            const datosPeli = datos.Search[e.target.parentNode.id];
+            e.target.classList.add("added");
+            e.target.innerHTML = "OK!"
+            
+            const datosEnvio = new FormData();
+            datosEnvio.append('titulo', datosPeli.Title);
+            datosEnvio.append('poster', datosPeli.Poster);
+            datosEnvio.append('idPeli', datosPeli.imdbID);
+            datosEnvio.append('añoProd', datosPeli.Year);
+            fetch(`./pelicula.php`, {
+                    method: 'POST',
+                    body: datosEnvio
+                }).then(response => response.json()).then(data => {
+                    console.log(data);
+    
+                });
+        }
+    })
 
