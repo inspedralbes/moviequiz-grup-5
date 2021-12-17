@@ -173,6 +173,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                         
                         console.log("Añado la pelicula" + e.target.parentNode.id);
                         const datosPeli = datos.Search[e.target.parentNode.id];
+                        console.log(datosPeli);
                         e.target.classList.add("added");
                         e.target.innerHTML = "OK!"
                         
