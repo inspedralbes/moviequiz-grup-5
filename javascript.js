@@ -270,7 +270,7 @@ function videos(){
         }
     });
 
-    document.getElementById("resultados-modal").addEventListener("click", function(e) {
+    /*document.getElementById("").addEventListener("click", function(e) {
         console.log(e.target);
         if (e.target.classList.contains("Guardar-valoracion")) {
             
@@ -291,5 +291,5 @@ function videos(){
     
                 });
         }
-    });
+    });*/
 
