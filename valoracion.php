@@ -38,7 +38,7 @@ if (isset($_POST['register'])) {
     $fav = $_POST['favorito'];
     $valoracion = $_POST['valoracion'];
     $comentario = $_POST['comentario'];
-    
+    $imdbId = $_REQUEST['imdbId'];
 
     //$player->insert()
 
