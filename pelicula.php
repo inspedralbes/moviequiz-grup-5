@@ -35,22 +35,22 @@ session_start();
 
 if (isset($_POST['register'])) {
 
-    $idpeli = $_POST['idPeli'];
-    $titulo = $_POST['titulo'];
-    $añoprod = $_POST['añoProd'];
-    $poster = $_POST['poster'];
+    $idpeli = $_REQUEST['imdbId'];
+    $titulo = $_REQUEST['Title'];
+    $añoprod = $_REQUEST['Year'];
+    $poster = $_REQUEST['Poster'];
 
     //$player->insert()
 
     $query = $connection->prepare("SELECT * FROM usuario WHERE EMAIL=:email");
     $query->bindParam("email", $email, PDO::PARAM_STR);
     $query->execute();
-
+    echo($query->errorCode() );
     if ($query->rowCount() == 0) {
-
+                            echo($query->errorCode() );
         //echo($username);
-                                                                            //BUSCAR FORMA D INTRODUCIR USUAIRO Y PELICULA
-        $query = $connection->prepare("INSERT INTO pelicula(IDPELI,TITULO,AÑOPROD,POSTER) VALUES (:idPeli,:titulo,:añoProd,:poster)");
+                            echo($query->errorCode() );                                         //BUSCAR FORMA D INTRODUCIR USUAIRO Y PELICULA
+        $query = $connection->prepare("INSERT INTO pelicula(IDPELI,TITULO,AÑOPROD,POSTER) VALUES (:imdbID,:Title,:Year,:Poster)");
         $query->bindParam("idPeli", $idpeli, PDO::PARAM_STR);
         $query->bindParam("titulo", $titulo, PDO::PARAM_STR);
         $query->bindParam("añoProd", $añoprod, PDO::PARAM_STR);
