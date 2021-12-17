@@ -274,19 +274,16 @@ function videos(){
         console.log(e.target);
         if (e.target.classList.contains("Guardar-valoracion")) {
             
-            valoracion
-
-
-            const datosPeli = datos.Search[e.target.parentNode.id];
-            e.target.classList.add("added");
-            e.target.innerHTML = "OK!"
+            favorito = e.target.parentElement.querySelectorAll("[name='Favorito']").checked = true;
+            comentario = e.target.parentElement.querySelectorAll("#comentario").value;
+            valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']").value;
+            alert("prueba");           
             
             const datosEnvio = new FormData();
-            datosEnvio.append('titulo', datosPeli.Title);
-            datosEnvio.append('poster', datosPeli.Poster);
-            datosEnvio.append('idPeli', datosPeli.imdbID);
-            datosEnvio.append('añoProd', datosPeli.Year);
-            fetch(`./pelicula.php`, {
+            datosEnvio.append('favorito', favorito);
+            datosEnvio.append('valoracion', valoracion);
+            datosEnvio.append('comentario', comentario);
+            fetch(`./valoracion.php`, {
                     method: 'POST',
                     body: datosEnvio
                 }).then(response => response.json()).then(data => {
