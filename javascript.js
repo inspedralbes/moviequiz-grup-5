@@ -248,7 +248,7 @@ function videos(){
 
     document.getElementById("resultados-modal").addEventListener("click", function(e) {
         console.log(e.target);
-        if (e.target.classList.contains("Guardar-valoracion")) {
+        if (e.target.classList.contains("favorito")) {
             
             console.log("Añado la pelicula" + e.target.parentNode.id);
             const datosPeli = datos.Search[e.target.parentNode.id];
