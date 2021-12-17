@@ -148,12 +148,12 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                     <textarea id="comentario" class="materialize-textarea" data-length="200"></textarea> 
                                                 </div>
                                                 <div>
-                                                    <button id="valoracion" class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</button>
+                                                    <button id="valoracion" class="waves-effect waves-light btn #1e88e5 blue darken-1 Guardar-valoracion">Guardar</button>
                                                 </div>
                                                 </center>
                                             </div>
                                             <div class="modal-footer #1e88e5 blue darken-1">
-                                              <a href="#!" class="modal-close waves-effect waves-green btn-flat Guardar-valoracion">Atras</a>
+                                              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
                                             </div>
                                         </div>
                                         </div> 
@@ -166,6 +166,30 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 //LE DIGO QUE ARRANQUE EL MODAL
                 var elems = document.querySelectorAll('.modal');
                 var instances = M.Modal.init(elems,{});
+
+                document.getElementById("resultados").addEventListener("click", function(e) {
+                    console.log(e.target);
+                    if (e.target.classList.contains("Guardar-valoracion")) {
+                        
+                        console.log("Añado la pelicula" + e.target.parentNode.id);
+                        const datosPeli = datos.Search[e.target.parentNode.id];
+                        e.target.classList.add("added");
+                        e.target.innerHTML = "OK!"
+                        
+                        const datosEnvio = new FormData();
+                        datosEnvio.append('titulo', datosPeli.Title);
+                        datosEnvio.append('poster', datosPeli.Poster);
+                        datosEnvio.append('idPeli', datosPeli.imdbID);
+                        datosEnvio.append('añoProd', datosPeli.Year);
+                        fetch(`./pelicula.php`, {
+                                method: 'POST',
+                                body: datosEnvio
+                            }).then(response => response.json()).then(data => {
+                                console.log(data);
+                
+                            });
+                    }
+                });
 
 
 
@@ -246,29 +270,7 @@ function videos(){
     });
     });
 
-    document.getElementById("resultadosmodal").addEventListener("click", function(e) {
-        console.log(e.target);
-        if (e.target.classList.contains("favorito")) {
-            
-            console.log("Añado la pelicula" + e.target.parentNode.id);
-            const datosPeli = datos.Search[e.target.parentNode.id];
-            e.target.classList.add("added");
-            e.target.innerHTML = "OK!"
-            
-            const datosEnvio = new FormData();
-            datosEnvio.append('titulo', datosPeli.Title);
-            datosEnvio.append('poster', datosPeli.Poster);
-            datosEnvio.append('idPeli', datosPeli.imdbID);
-            datosEnvio.append('añoProd', datosPeli.Year);
-            fetch(`./pelicula.php`, {
-                    method: 'POST',
-                    body: datosEnvio
-                }).then(response => response.json()).then(data => {
-                    console.log(data);
-    
-                });
-        }
-    });
+
 
     /*document.getElementById("").addEventListener("click", function(e) {
         console.log(e.target);
