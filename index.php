@@ -82,13 +82,13 @@ include "header.html";
 
             <center>
               <h4>Juego de Peliculas</h4>
-              <button id="juego" class="btn waves-effect waves-light" type="button" href="#modalGame">Jugar</button>
+              <a class="waves-effect waves-light btn modal-trigger" href="#modalGame" id="juego">Jugar</a>
               <br>
             </center>
           
             <div class="row" id="resultados">
               <center>
-                  <h4>pel·lícules mas populares</h4>
+                  <h4>películas mas populares</h4>
                   <div class="carousel">
                     <a class="carousel-item"><img src="img/img1.jpg"></a>
                     <a class="carousel-item"><img src="img/img2.jpg"></a>
@@ -102,6 +102,22 @@ include "header.html";
                   <source src="/vid/video1.mp4" type="video/mp4">
                   </video>
               </center>
+            </div>
+            <div id="divJuego">
+
+              <div id="modalGame" class="modal modal-fixed-footer #1e88e5 blue darken-1">
+                <div class="modal-content">
+
+                    <h1 style="text-align:center;">Movie Quiz</h1>
+                    <div id="contenidoJuego">
+                      
+                    </div>
+                </div>
+                  <div class="modal-footer #64b5f6 blue lighten-2">
+                  <center>
+                      <button id='enviarJuego' class="btn waves-effect waves-light #1e88e5 blue darken-1">Finalizar</button>
+                  </center>
+              </div>
             </div>
       </div>
     </div>      

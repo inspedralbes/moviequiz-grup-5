@@ -80,8 +80,10 @@ document.getElementById("delete").addEventListener("click",function(){
 document.getElementById("registrarse").addEventListener("click",function(){
     window.location="signup.php";
 });
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+});
 document.getElementById("busqueda").addEventListener("click",function(){
     let busqueda=document.getElementById("busquedaPeli").value;
         
@@ -110,8 +112,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                 <h5>Valoracion</h5>
                                                 <div>
                                                 <form method="post">
-                                                    <div>
-                                                        
+                                                    <div>   
                                                         <label>
                                                             <input id="favorito" name="Favorito" type="checkbox"/>
                                                             <span>Marcar como favorito</span>
@@ -210,45 +211,38 @@ function videos(){
         console.log(data);
         
         let htmlStr="";
-        htmlStr+=`
-        <div id="modalGame" class="modal">
-        <div class="modal-content">
-        `;
         for (let i = 0; i < 5; i++) {
         
         htmlStr += `
       
-        <div class="col l12 #1e88e5 blue darken-1" id="game">
+        <div>
         <center>
             <h5>${data.peliculas[i].Nombre}</h5>
             <img src='${data.peliculas[i].Poster}' width="200px">
             <div>
             <form method="post">
-                <input type="radio" name="game" id="opcion1">
-                <label for="opcion1">${data.peliculas[i].choice1}</label>
-                <input type="radio" name="game" id="opcion2">
-                <label for="opcion2">${data.peliculas[i].choice2}</label>
-                <input type="radio" name="game" id="opcion3">
-                <label for="opcion3">${data.peliculas[i].choice3}</label>
-                <input type="radio" name="game" id="opcion4">
-                <label for="opcion4">${data.peliculas[i].choice4}</label>
+                 <div>
+                    <br>
+                    <label>
+                        <input name="${data.peliculas[i].choice1}" type="button" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #64b5f6 blue lighten-2"/>
+                    </label>
+                    <label>
+                        <input name="${data.peliculas[i].choice2}" type="button" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #64b5f6 blue lighten-2"/>
+                    </label>
+                    <label>
+                        <input name="${data.peliculas[i].choice3}" type="button" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #64b5f6 blue lighten-2"/>
+                    </label>
+                    <label>
+                        <input name="${data.peliculas[i].choice4}" type="button" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #64b5f6 blue lighten-2"/>
+                    </label>
+                </div>
             </form>
             </div>
         </center>
         </div><br>  
         `;
         };
-        htmlStr += `
-        </div>
-        <div class="modal-footer">
-        <center>
-            <button id='enviar' class="btn waves-effect waves-light #1e88e5 blue darken-1">Finalizar</button>
-            <button id="deleteGame" class="btn waves-effect waves-light red" type="button">Salir</button>
-        </center>
-        </div>
-      </div>
-`;
-        document.getElementById("resultados").innerHTML = htmlStr;
+        document.getElementById("contenidoJuego").innerHTML = htmlStr;
     });
     });
 
