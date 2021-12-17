@@ -103,7 +103,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                         </div>
                                         <center>
                                         <span class="card-title">${data.Search[index].Title} -${data.Search[index].Year}</span><br>
-                                        <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1 resultados-modal" href="#modal${index}" ><i class="material-icons">add</i></a>
+                                        <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" id="resultadosmodal" href="#modal${index}" ><i class="material-icons">add</i></a>
                                         </center>
                                         <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
                                             <div class="modal-content">
@@ -246,7 +246,7 @@ function videos(){
     });
     });
 
-    document.getElementById("resultados-modal").addEventListener("click", function(e) {
+    document.getElementById("resultadosmodal").addEventListener("click", function(e) {
         console.log(e.target);
         if (e.target.classList.contains("favorito")) {
             
@@ -268,5 +268,31 @@ function videos(){
     
                 });
         }
-    })
+    });
+
+    document.getElementById("resultados-modal").addEventListener("click", function(e) {
+        console.log(e.target);
+        if (e.target.classList.contains("Guardar-valoracion")) {
+            
+            valoracion
+
+
+            const datosPeli = datos.Search[e.target.parentNode.id];
+            e.target.classList.add("added");
+            e.target.innerHTML = "OK!"
+            
+            const datosEnvio = new FormData();
+            datosEnvio.append('titulo', datosPeli.Title);
+            datosEnvio.append('poster', datosPeli.Poster);
+            datosEnvio.append('idPeli', datosPeli.imdbID);
+            datosEnvio.append('añoProd', datosPeli.Year);
+            fetch(`./pelicula.php`, {
+                    method: 'POST',
+                    body: datosEnvio
+                }).then(response => response.json()).then(data => {
+                    console.log(data);
+    
+                });
+        }
+    });
 
