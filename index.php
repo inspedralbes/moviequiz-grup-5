@@ -59,7 +59,7 @@ include "header.html";
             </div>  
         </div>
     </div>
-
+    <hr>
     <div class="row">
     <div class="col s12 " >
       <nav class="#1e88e5 blue darken-1 noactive" id="navbar">
