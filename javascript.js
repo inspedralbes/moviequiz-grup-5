@@ -95,7 +95,8 @@ document.getElementById("busqueda").addEventListener("click",function(){
 
                     htmlStr += `
                                     <div class="col s4 m6 l3">
-                                        <div id="pelicula" class="card">
+
+                                        <div id="pelicula${index}" class="card">
                                             <div class="card-image">
                                             <img src="${data.Search[index].Poster}">
                                         </div>
