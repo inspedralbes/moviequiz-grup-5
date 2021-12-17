@@ -35,7 +35,7 @@ session_start();
 
 if (isset($_POST['register'])) {
 
-    $idpeli = $_POST['idPeli']
+    $idpeli = $_POST['idPeli'];
     $titulo = $_POST['titulo'];
     $añoprod = $_POST['añoProd'];
     $poster = $_POST['poster'];
@@ -58,7 +58,7 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
 
         //la vaina d abajo pa mirar errores
-        //echo($query2->errorCode() );
+        echo($query->errorCode() );
 
         if ($result) {
             echo '<center><p class="flow-text centrao">Datos guardados correctamente!!</p></center>';
