@@ -97,7 +97,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     htmlStr += `
                                     <div class="col s4 m6 l3">
 
-                                        <div id="pelicula${index}" class="card">
+                                        <div id="pelicula${index}" class="card" >
                                             <div class="card-image">
                                             <img src="${data.Search[index].Poster}">
                                         </div>
@@ -148,7 +148,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                     <textarea id="comentario" class="materialize-textarea" data-length="200"></textarea> 
                                                 </div>
                                                 <div>
-                                                    <button id="valoracion" class="waves-effect waves-light btn #1e88e5 blue darken-1 Guardar-valoracion">Guardar</button>
+                                                    <button id="valoracion" value="${index}" class="waves-effect waves-light btn #1e88e5 blue darken-1 Guardar-valoracion">Guardar</button>
                                                 </div>
                                                 </center>
                                             </div>
@@ -171,21 +171,23 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     console.log(e.target);
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
-                        console.log("Añado la pelicula" + e.target.parentNode.id);
-                        const datosPeli = datos.Search[e.target.parentNode.id];
+                        
+                        const numPelis = e.target.value;
+                        console.log("Añado la pelicula " + numPelis);
+                        const datosPeli = data.Search[numPelis];
                         console.log(datosPeli);
                         e.target.classList.add("added");
-                        e.target.innerHTML = "OK!"
+                        e.target.innerHTML = "OK!";
                         
                         const datosEnvio = new FormData();
                         datosEnvio.append('titulo', datosPeli.Title);
                         datosEnvio.append('poster', datosPeli.Poster);
                         datosEnvio.append('idPeli', datosPeli.imdbID);
                         datosEnvio.append('añoProd', datosPeli.Year);
-                        fetch(`./pelicula.php`, {
+                        fetch(`pelicula.php`, {
                                 method: 'POST',
                                 body: datosEnvio
-                            }).then(response => response.json()).then(data => {
+                            }).then(data => {
                                 console.log(data);
                 
                             });
