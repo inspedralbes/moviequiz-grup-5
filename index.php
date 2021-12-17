@@ -81,14 +81,14 @@ include "header.html";
       <div class="col s12 m12 l12">
 
             <center>
-              <h4>Juego de Peliculas</h4>
+              <h4>MovieQuiz</h4>
               <a class="waves-effect waves-light btn modal-trigger" href="#modalGame" id="juego">Jugar</a>
               <br>
             </center>
           
             <div class="row" id="resultados">
               <center>
-                  <h4>películas mas populares</h4>
+                  <h4>Películas mas populares</h4>
                   <div class="carousel">
                     <a class="carousel-item"><img src="img/img1.jpg"></a>
                     <a class="carousel-item"><img src="img/img2.jpg"></a>
@@ -97,7 +97,7 @@ include "header.html";
                     <a class="carousel-item"><img src="img/img5.jpg"></a>
                     <a class="carousel-item"><img src="img/img6.jpg"></a>
                   </div> 
-                  <h4>Trailers</h4> 
+                  <h4>Tráilers</h4>
                   <video width="1000" height="500" id="video" autoplay muted>
                   <source src="/vid/video1.mp4" type="video/mp4">
                   </video>
