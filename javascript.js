@@ -114,7 +114,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                 <form method="post">
                                                     <div>   
                                                         <label>
-                                                            <input id="favorito" name="Favorito" type="checkbox"/>
+                                                            <input id="favorito" class="favorito" name="Favorito" type="checkbox"/>
                                                             <span>Marcar como favorito</span>
                                                         </label>
                                                     </div>
