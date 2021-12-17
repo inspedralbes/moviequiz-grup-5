@@ -35,10 +35,10 @@ session_start();
 
 if (isset($_POST['register'])) {
 
-    $fav = $_POST['favorito'];
-    $valoracion = $_POST['valoracion'];
-    $comentario = $_POST['comentario'];
-    
+    $idpeli = $_POST['idPeli']
+    $titulo = $_POST['titulo'];
+    $añoprod = $_POST['añoProd'];
+    $poster = $_POST['poster'];
 
     //$player->insert()
 
@@ -50,10 +50,11 @@ if (isset($_POST['register'])) {
 
         //echo($username);
                                                                             //BUSCAR FORMA D INTRODUCIR USUAIRO Y PELICULA
-        $query = $connection->prepare("INSERT INTO valoracio_pelicules(FAVORIT,VALORACIO,COMENTARI) VALUES (:favorito,:valoracion,:comentario)");
-        $query->bindParam("favorito", $fav, PDO::PARAM_STR);
-        $query->bindParam("valoracion", $valoracion, PDO::PARAM_STR);
-        $query->bindParam("comentario", $comentario, PDO::PARAM_STR);
+        $query = $connection->prepare("INSERT INTO pelicula(IDPELI,TITULO,AÑOPROD,POSTER) VALUES (:idPeli,:titulo,:añoProd,:poster)");
+        $query->bindParam("idPeli", $idpeli, PDO::PARAM_STR);
+        $query->bindParam("titulo", $titulo, PDO::PARAM_STR);
+        $query->bindParam("añoProd", $añoprod, PDO::PARAM_STR);
+        $query->bindParam("poster", $poster, PDO::PARAM_STR);
         $result = $query->execute();
 
         //la vaina d abajo pa mirar errores
