@@ -146,7 +146,8 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                 </div>
                                                 <div class"input-field">
                                                     <label for="comentario">Comentario<label>
-                                                    <textarea id="comentario" class="materialize-textarea" data-length="200"></textarea> 
+                                                    <textarea id="comentario" class="materialize-textarea" data-length="200"></textarea>
+                                                    <div id="mensajeGuardar"><div> 
                                                 </div>
                                                 <div>
                                                     <button id="valoracion" value="${index}" class="waves-effect waves-light btn #1e88e5 blue darken-1 Guardar-valoracion">Guardar</button>
@@ -180,7 +181,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
                         const numPelis = e.target.value;
                         console.log("Añado la pelicula " + numPelis);
                         const datosPeli = data.Search[numPelis];
-                        e.target.innerHTML = "¡Guardado!";
                         
                         const datosEnvio = new FormData();
                         datosEnvio.append('user', user);
@@ -196,7 +196,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                 body: datosEnvio
                             }).then(data => {
                                 console.log(data);
-                                e.target.innerHTML = "Guardar";
                             });
                     }
                 });
