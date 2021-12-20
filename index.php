@@ -27,7 +27,7 @@ include "header.html";
                 <center>
                 <img id="perfileImg" src="#" width="75px" />
                 <br>
-                <button id="btnLogout" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Salir</button>
+                <button id="btnLogout" class="btn waves-effect waves-light #42a5f5 blue lighten-1" type="button">Salir</button>
                 </center>
                 <br>
             </div>
@@ -50,8 +50,8 @@ include "header.html";
                 <li>
                   <div class="input-field ">
                     <center>
-                    <button class="btn waves-effect waves-light #1e88e5 blue darken-1"  id="login" name="action">Entrar</button>
-                    <button class="btn waves-effect waves-light #1e88e5 blue darken-1"  name="action" id="registrarse">Registrarse</button>
+                    <button class="btn waves-effect waves-light #42a5f5 blue lighten-1"  id="login" name="action">Entrar</button>
+                    <button class="btn waves-effect waves-light #42a5f5 blue lighten-1"  name="action" id="registrarse">Registrarse</button>
                     <center>
                   </div>
                 </li>
@@ -62,15 +62,15 @@ include "header.html";
 
     <div class="row">
     <div class="col s12 " >
-      <nav class="#1e88e5 blue darken-1 noactive" id="navbar">
+      <nav class="#42a5f5 blue lighten-1 noactive" id="navbar">
             <div id="barraBusqueda"  class="nav-wrapper noactive">
-              <div class="input-field #1e88e5 blue darken-1">
+              <div class="input-field #42a5f5 blue lighten-1">
                 <input id="busquedaPeli" type="search">
                 <label class="label-icon"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
               </div>
               <center>
-                <button id="busqueda" class="btn waves-effect waves-light #1e88e5 blue darken-1" type="button">Buscar</button>
+                <button id="busqueda" class="btn waves-effect waves-light #42a5f5 blue lighten-1" type="button">Buscar</button>
                 <button id="delete" class="btn waves-effect waves-light red" type="button">Borrar</button>
               </center>
             </div>
@@ -105,7 +105,7 @@ include "header.html";
             </div>
             <div id="divJuego">
 
-              <div id="modalGame" class="modal modal-fixed-footer #1e88e5 blue darken-1">
+              <div id="modalGame" class="modal modal-fixed-footer #42a5f5 blue lighten-1">
                 <div class="modal-content">
 
                     <h1 style="text-align:center;">Movie Quiz</h1>
@@ -115,7 +115,7 @@ include "header.html";
                 </div>
                   <div class="modal-footer #bbdefb blue lighten-4">
                   <center>
-                      <button id='enviarJuego' class="btn waves-effect waves-light #1e88e5 blue darken-1">Finalizar</button>
+                      <button id='enviarJuego' class="btn waves-effect waves-light #42a5f5 blue lighten-1">Finalizar</button>
                   </center>
               </div>
             </div>

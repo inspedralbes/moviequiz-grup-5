@@ -104,7 +104,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                         </div>
                                         <center>
                                         <span class="card-title">${data.Search[index].Title} -${data.Search[index].Year}</span><br>
-                                        <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" id="resultadosmodal" href="#modal${index}" ><i class="material-icons">add</i></a>
+                                        <a class="waves-effect waves-light btn modal-trigger #42a5f5 blue lighten-1" id="resultadosmodal" href="#modal${index}" ><i class="material-icons">add</i></a>
                                         </center>
                                         <div id="modal${index}" class="modal #bbdefb blue lighten-4">
                                             <div class="modal-content">
@@ -149,11 +149,11 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                     <textarea id="comentario" class="materialize-textarea" data-length="200"></textarea> 
                                                 </div>
                                                 <div>
-                                                    <button id="valoracion" value="${index}" class="waves-effect waves-light btn #1e88e5 blue darken-1 Guardar-valoracion">Guardar</button>
+                                                    <button id="valoracion" value="${index}" class="waves-effect waves-light btn #42a5f5 blue lighten-1 Guardar-valoracion">Guardar</button>
                                                 </div>
                                                 </center>
                                             </div>
-                                            <div class="modal-footer #1e88e5 blue darken-1">
+                                            <div class="modal-footer #42a5f5 blue lighten-1">
                                               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Atras</a>
                                             </div>
                                         </div>
