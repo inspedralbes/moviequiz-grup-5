@@ -90,7 +90,7 @@ if (isset($_POST['register'])) {
  
 ?>
 
-<body class="#bbdefb blue lighten-4">
+<body class="#90caf9 blue lighten-3">
 <center><img src="/img/MovieQuiz.png" width="200px"></center><br>
 <div class="container ">
         <form class="col s12" method="POST" action="" name="signup-form">
