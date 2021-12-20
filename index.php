@@ -91,12 +91,12 @@ include "header.html";
               <center>
                   <h4>Películas mas populares</h4>
                   <div class="carousel">
-                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=1&h=220"></a>
-                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=2&h=220"></a>
-                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=3&h=220"></a>
-                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=4&h=220"></a>
-                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=5&h=220"></a>
-                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=6&h=220"></a>
+                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=155&h=220"></a>
+                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=156&h=220"></a>
+                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=157&h=220"></a>
+                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=158&h=220"></a>
+                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=159&h=220"></a>
+                    <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=160&h=220"></a>
                   </div> 
                   <h4>Tráilers</h4>
                   <video width="1000" height="500" id="video" autoplay muted>

@@ -208,12 +208,12 @@ function videos(){
         <center>
             <h4>Películas mas populares</h4>
             <div class="carousel">
-                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=7&h=220"></a>
-                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=8&h=220"></a>
-                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=9&h=220"></a>
-                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=10&h=220"></a>
-                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=11&h=220"></a>
-                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=12&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=161&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=162&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=163&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=164&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=165&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=166&h=220"></a>
             </div> 
             <h4>Trailers</h4> 
             <video width="1000" height="500" id="video" autoplay muted>
