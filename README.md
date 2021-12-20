@@ -7,6 +7,22 @@ Esquema mínim de carpetes pels projectes transversals
 ## Atenció
 Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre projecte (utilitzant markdown)
 
+# Estat:
+Sprint 1:
+
+Primer pas volem el registre per poder tenir usuaris a la base de dades.
+
+Sprint 2:
+
+Es vol aconseguir poder iniciar sessio amb un login.
+
+Sprint 3:
+
+poder inserir peliculas a la base de dades i começar el joc.
+
+Sprint 4:
+
+Per el Sprint 4 volem que es guardin en la base de dades les valoracions de les pelicules i es pugui jugar amb les pelicules de la base de dades.
 
 # Aquest fitxer ha de contenir com a mínim:
  * Nom dels integrants
@@ -14,3 +30,6 @@ Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre
  * Petita descripció
  * URL de producció (quan la tingueu)
  * Estat: (explicació de en quin punt està)
+
+
+URL de producció: http://moviequiz5.alumnes.inspedralbes.cat/ 
