@@ -92,10 +92,10 @@ document.getElementById("busqueda").addEventListener("click",function(){
         }).then(function(data){
 
                 let htmlStr="";
+                htmlStr+="<center><h4>Busqueda de Peliculas<h4></center>";
                 for (let index = 0; index < 8; index++) {
 
                     htmlStr += `
-                        <center><h4>Busqueda de Peliculas<h4></center>
                                     <div class="col s4 m6 l3">
 
                                         <div id="pelicula${index}" class="card" >
