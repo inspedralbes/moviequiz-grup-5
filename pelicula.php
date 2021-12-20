@@ -27,11 +27,12 @@ try {
     //$player->insert()
 
         //BUSCAR FORMA D INTRODUCIR USUAIRO Y PELICULA
-        $query = $connection->prepare("INSERT INTO pelicula (idPeli, titulo, añoProd,poster) VALUES (:idPeli,:titulo,:anyo,:poster)");
+        $query = $connection->prepare("INSERT INTO pelicula (idPeli, titulo, añoProd,poster,usuario) VALUES (:idPeli,:titulo,:anyo,:poster,:user)");
         $query->bindParam("idPeli", $idpeli, PDO::PARAM_STR);
         $query->bindParam("titulo", $titulo, PDO::PARAM_STR);
         $query->bindParam("anyo", $anoprod, PDO::PARAM_STR);
         $query->bindParam("poster", $poster, PDO::PARAM_STR);
+        $query->bindParam("user", $user, PDO::PARAM_STR);
         $result = $query->execute();
         print_r($query->errorInfo());
 

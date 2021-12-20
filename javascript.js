@@ -162,8 +162,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                         </div> 
                                     </div>
                                         `;
-
-
                 }
                 document.getElementById("resultados").innerHTML = htmlStr;
                 //LE DIGO QUE ARRANQUE EL MODAL
@@ -228,7 +226,7 @@ function videos(){
 };
 //funcion encargada de crear un juego
     document.getElementById("juego").addEventListener("click",function(){
-        fetch('./peliculaUsuario.php')
+        fetch('output_generar_partida.json')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
@@ -240,8 +238,8 @@ function videos(){
       
         <div>
         <center>
-            <h5>${data.pelicules[i].titulo}</h5>
-            <img src='${data.pelicules[i].Poster}' width="200px">
+            <h5>${data.peliculas[i].Nombre}</h5>
+            <img src='${data.peliculas[i].Poster}' width="200px">
             <div>
             <form method="post">
                  <div>
@@ -274,8 +272,30 @@ function videos(){
         .then(response => response.json() )
         .then(data => {
         console.log(data);
-        
+        let user = document.getElementById("username").value;
         let htmlStr="";
+        if(user==data.pelicules.usuario){
+        htmlStr+="<center><h4>Busqueda de Peliculas<h4></center>";
 
+        
+            for (let i = 0; i < 5; i++) {
+                htmlStr+= `
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="${data.pelicules[i].poster}">
+                    </div>
+                    <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">${data.pelicules[i].titulo}<i class="material-icons right">more_vert</i></span>
+                    <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">${data.pelicules[i].titulo}<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+                `;
+}
+        }
+        document.getElementById("resultados").innerHTML = htmlStr;
     });
 });
