@@ -196,7 +196,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                 body: datosEnvio
                             }).then(data => {
                                 console.log(data);
-                
+                                e.target.innerHTML = "Guardar";
                             });
                     }
                 });
