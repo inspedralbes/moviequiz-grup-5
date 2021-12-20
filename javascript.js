@@ -175,7 +175,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                         
 
                         let favorito = e.target.parentElement.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
-                        let comentario = e.target.parentElement.querySelector("#comentario").value;
+                        let comentario = document.getElementById("comentario").value;
                         let valoracion = e.target.parentElement.querySelector("[name='valoracion']:checked").value; 
                         let user = document.getElementById("username").value;
                         const numPelis = e.target.value;
