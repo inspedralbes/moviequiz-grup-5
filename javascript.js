@@ -95,6 +95,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 for (let index = 0; index < 8; index++) {
 
                     htmlStr += `
+                        <center><h4>Busqueda de Peliculas<h4></center>
                                     <div class="col s4 m6 l3">
 
                                         <div id="pelicula${index}" class="card" >
@@ -210,7 +211,7 @@ function videos(){
     let htmlStr="";
     htmlStr+=`   
         <center>
-            <h4>pel·lícules més populars</h4>
+            <h4>Películas mas populares</h4>
             <div class="carousel">
                 <a class="carousel-item"><img src="img/img1.jpg"></a>
                 <a class="carousel-item"><img src="img/img2.jpg"></a>

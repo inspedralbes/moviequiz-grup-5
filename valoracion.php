@@ -32,8 +32,8 @@ try {
 $player=new players();
 
 session_start();
-
-if (isset($_POST['register'])) {
+print_r ("Prueba");
+if (isset($_POST['imdbId'])) {
 
     $fav = $_POST['favorito'];
     $valoracion = $_POST['valoracion'];
