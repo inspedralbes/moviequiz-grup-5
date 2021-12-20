@@ -208,12 +208,12 @@ function videos(){
         <center>
             <h4>Películas mas populares</h4>
             <div class="carousel">
-                <a class="carousel-item"><img src="img/img1.jpg"></a>
-                <a class="carousel-item"><img src="img/img2.jpg"></a>
-                <a class="carousel-item"><img src="img/img3.jpg"></a>
-                <a class="carousel-item"><img src="img/img4.jpg"></a>
-                <a class="carousel-item"><img src="img/img5.jpg"></a>
-                <a class="carousel-item"><img src="img/img6.jpg"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=7&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=8&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=9&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=10&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=11&h=220"></a>
+                <a class="carousel-item"><img src="https://api.lorem.space/image/movie?w=12&h=220"></a>
             </div> 
             <h4>Trailers</h4> 
             <video width="1000" height="500" id="video" autoplay muted>
