@@ -26,7 +26,7 @@ let p = document.getElementById("pwd").value;
 
                     
                     if (data.exito == true) {
-                        conectado = 1;
+                        
                         document.getElementById("mensaje").innerHTML = "Bienvenido a Movie Quiz 5 " + data.nombre;
                         document.getElementById("perfileImg").setAttribute("src", data.imagen);
 
@@ -50,7 +50,6 @@ let p = document.getElementById("pwd").value;
             
 document.getElementById("btnLogout").addEventListener("click", function() {
 
-    conectado = 0;
                 
     document.getElementById("divLogin").classList.remove("noactive");
     document.getElementById("divLogin").classList.add("active");
@@ -229,7 +228,7 @@ function videos(){
 };
 //funcion encargada de crear un juego
     document.getElementById("juego").addEventListener("click",function(){
-        fetch('output_generar_partida.json')
+        fetch('./peliculaUsuario.php')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
@@ -241,8 +240,8 @@ function videos(){
       
         <div>
         <center>
-            <h5>${data.peliculas[i].Nombre}</h5>
-            <img src='${data.peliculas[i].Poster}' width="200px">
+            <h5>${data.pelicules[i].titulo}</h5>
+            <img src='${data.pelicules[i].Poster}' width="200px">
             <div>
             <form method="post">
                  <div>
@@ -267,9 +266,16 @@ function videos(){
         `;
         };
         document.getElementById("contenidoJuego").innerHTML = htmlStr;
-        document.getElementById("")
+        //document.getElementById("")
     });
     });
+    document.getElementById("mispelis").addEventListener("click",function(){
+        fetch('./peliculaUsuario.php')
+        .then(response => response.json() )
+        .then(data => {
+        console.log(data);
+        
+        let htmlStr="";
 
-
-
+    });
+});
