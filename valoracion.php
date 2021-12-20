@@ -32,7 +32,7 @@ try {
 $player=new players();
 
 session_start();
-print_r ("Prueba");
+console.log("Prueba");
 if (isset($_POST['imdbId'])) {
 
     $fav = $_POST['favorito'];
