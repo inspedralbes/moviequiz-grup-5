@@ -174,9 +174,9 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
 
-                        let favorito = e.target.parentElement.querySelectorAll("[name='Favorito']".checked == true) ? 1 : 0;
-                        let comentario = e.target.parentElement.querySelectorAll("#comentario").value;
-                        let valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']:checked").value; 
+                        let favorito = e.target.parentElement.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
+                        let comentario = e.target.parentElement.querySelector("#comentario").value;
+                        let valoracion = e.target.parentElement.querySelector("[name='valoracion']:checked").value; 
                         let user = document.getElementById("username").value;
                         const numPelis = e.target.value;
                         console.log("Añado la pelicula " + numPelis);
