@@ -15,7 +15,6 @@ try {
     exit("Error: " . $e->getMessage());
 }
 
-
 session_start();
 
     $idpeli = $_POST['imdbId'];
@@ -23,7 +22,6 @@ session_start();
     $anoprod = $_POST['Year'];
     $poster = $_POST['Poster'];
 
-    echo ($idpeli);
     //$player->insert()
 
         //BUSCAR FORMA D INTRODUCIR USUAIRO Y PELICULA

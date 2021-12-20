@@ -185,7 +185,30 @@ document.getElementById("busqueda").addEventListener("click",function(){
                         datosEnvio.append('poster', datosPeli.Poster);
                         datosEnvio.append('idPeli', datosPeli.imdbID);
                         datosEnvio.append('añoProd', datosPeli.Year);
-                        fetch(`pelicula.php`, {
+                        fetch(`./pelicula.php`, {
+                                method: 'POST',
+                                body: datosEnvio
+                            }).then(data => {
+                                console.log(data);
+                
+                            });
+                    }
+                });
+
+                document.getElementById("").addEventListener("click", function(e) {
+                    console.log(e.target);
+                    if (e.target.classList.contains("Guardar-valoracion")) {
+                        
+                        favorito = e.target.parentElement.querySelectorAll("[name='Favorito']").checked = true;
+                        comentario = e.target.parentElement.querySelectorAll("#comentario").value;
+                        valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']").value;         
+                        
+                        const datosEnvio = new FormData();
+                        datosEnvio.append('idPeli', datosPeli.imdbID);
+                        datosEnvio.append('favorito', favorito);
+                        datosEnvio.append('valoracion', valoracion);
+                        datosEnvio.append('comentario', comentario);
+                        fetch(`./valoracion.php`, {
                                 method: 'POST',
                                 body: datosEnvio
                             }).then(data => {
@@ -275,27 +298,4 @@ function videos(){
     });
 
 
-
-    /*document.getElementById("").addEventListener("click", function(e) {
-        console.log(e.target);
-        if (e.target.classList.contains("Guardar-valoracion")) {
-            
-            favorito = e.target.parentElement.querySelectorAll("[name='Favorito']").checked = true;
-            comentario = e.target.parentElement.querySelectorAll("#comentario").value;
-            valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']").value;
-            alert("prueba");           
-            
-            const datosEnvio = new FormData();
-            datosEnvio.append('favorito', favorito);
-            datosEnvio.append('valoracion', valoracion);
-            datosEnvio.append('comentario', comentario);
-            fetch(`./valoracion.php`, {
-                    method: 'POST',
-                    body: datosEnvio
-                }).then(response => response.json()).then(data => {
-                    console.log(data);
-    
-                });
-        }
-    });*/
 
