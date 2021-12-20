@@ -1,3 +1,4 @@
+//login i logout de la pagina 
 document.getElementById("login").addEventListener("click",function(){
 
 let u = document.getElementById("username").value;
@@ -84,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, {});
 });
+//introducion de las cartas con modales para poder valorar
 document.getElementById("busqueda").addEventListener("click",function(){
     let busqueda=document.getElementById("busquedaPeli").value;
         
@@ -167,7 +169,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 //LE DIGO QUE ARRANQUE EL MODAL
                 var elems = document.querySelectorAll('.modal');
                 var instances = M.Modal.init(elems,{});
-
+                //le envio a php los datos por metodo post.
                 document.getElementById("resultados").addEventListener("click", function(e) {
                     console.log(e.target);
                     if (e.target.classList.contains("Guardar-valoracion")) {
@@ -201,7 +203,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 });
         });
     });
-
+// devuelve el carousel y el video
 function videos(){
     let htmlStr="";
     htmlStr+=`   
@@ -227,6 +229,7 @@ function videos(){
 
     return htmlStr;
 };
+//funcion encargada de crear un juego
     document.getElementById("juego").addEventListener("click",function(){
         fetch('output_generar_partida.json')
         .then(response => response.json() )

@@ -69,23 +69,6 @@ if (isset($_POST['register'])) {
         echo '<center><p class="flow-text centrao">USUARIO DUPLICADO</p></center>';
     }
 
-    /*private function read_user_data () {
-        $user_data = array();
-
-        if($_POST) {
-
-            if(array_key_exists("username",$_POST))
-                $user_data['username'] = $_POST['username'];
-
-            if(array_key_exists("email",$_POST))
-                $user_data['email'] = $_POST['email'];
-
-            if(array_key_exists("passwd",$_POST))
-                $user_data['passwd'] = $_POST['passwd'];
-        }
-
-        return $user_data;
-    }*/
 }
  
 ?>
