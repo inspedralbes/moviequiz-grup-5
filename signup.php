@@ -90,7 +90,7 @@ if (isset($_POST['register'])) {
  
 ?>
 
-<body class="#64b5f6 blue lighten-2">
+<body class="#bbdefb blue lighten-4">
 <center><img src="/img/MovieQuiz.png" width="200px"></center><br>
 <div class="container ">
         <form class="col s12" method="POST" action="" name="signup-form">
@@ -116,10 +116,10 @@ if (isset($_POST['register'])) {
                 </div>
             </div>
     <center>
-            <button class="btn waves-effect waves-light #1e88e5 blue darken-1" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
+            <button class="btn waves-effect waves-light #42a5f5 blue lighten-1" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
         </form>
     <div class="input-field col s3">
-        <a class="waves-effect waves-light btn-small #1e88e5 blue darken-1" href="index.php">Volver</a>
+        <a class="waves-effect waves-light btn-small #42a5f5 blue lighten-1" href="index.php">Volver</a>
     </div>
 </div>
     <center>
