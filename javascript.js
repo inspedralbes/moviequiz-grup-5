@@ -195,7 +195,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     }
                 });
 
-                document.getElementById("").addEventListener("click", function(e) {
+                document.getElementById("resultados").addEventListener("click", function(e) {
                     console.log(e.target);
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
