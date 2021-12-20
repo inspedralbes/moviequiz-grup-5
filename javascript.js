@@ -172,15 +172,21 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     console.log(e.target);
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
-                        
+
+                        let favorito = e.target.parentElement.querySelectorAll("[name='Favorito']".checked == true) ? 1 : 0;
+                        let comentario = e.target.parentElement.querySelectorAll("#comentario").value;
+                        let valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']:checked").value; 
+                        let user = document.getElementById("username").value;
                         const numPelis = e.target.value;
                         console.log("Añado la pelicula " + numPelis);
                         const datosPeli = data.Search[numPelis];
-                        console.log(datosPeli);
-                        e.target.classList.add("added");
-                        e.target.innerHTML = "OK!";
+                        e.target.innerHTML = "¡Guardado!";
                         
                         const datosEnvio = new FormData();
+                        datosEnvio.append('user', user);
+                        datosEnvio.append('favorito', favorito);
+                        datosEnvio.append('valoracion', valoracion);
+                        datosEnvio.append('comentario', comentario);
                         datosEnvio.append('titulo', datosPeli.Title);
                         datosEnvio.append('poster', datosPeli.Poster);
                         datosEnvio.append('idPeli', datosPeli.imdbID);
@@ -194,41 +200,8 @@ document.getElementById("busqueda").addEventListener("click",function(){
                             });
                     }
                 });
-
-                document.getElementById("resultados").addEventListener("click", function(e) {
-                    console.log(e.target);
-                    if (e.target.classList.contains("Guardar-valoracion")) {
-                        
-                        favorito = e.target.parentElement.querySelectorAll("[name='Favorito']").checked = true;
-                        comentario = e.target.parentElement.querySelectorAll("#comentario").value;
-                        valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']").value;         
-                        
-                        const datosEnvio = new FormData();
-                        datosEnvio.append('idPeli', datosPeli.imdbID);
-                        datosEnvio.append('favorito', favorito);
-                        datosEnvio.append('valoracion', valoracion);
-                        datosEnvio.append('comentario', comentario);
-                        fetch(`./valoracion.php`, {
-                                method: 'POST',
-                                body: datosEnvio
-                            }).then(data => {
-                                console.log(data);
-                
-                            });
-                    }
-                });
-
-
-
         });
     });
-
-/*document.getElementById("favorito").addEventListener("click",function(){
- favorito=1;
- if (favorito=1){
-
- }
-});*/
 
 function videos(){
     let htmlStr="";
