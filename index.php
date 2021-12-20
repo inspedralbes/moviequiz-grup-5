@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="estilos/style.css">
 
 </head>
-<body class="#64b5f6 blue lighten-2">  
+<body class="#bbdefb blue lighten-4">  
 
 <?php
 
@@ -113,7 +113,7 @@ include "header.html";
                       
                     </div>
                 </div>
-                  <div class="modal-footer #64b5f6 blue lighten-2">
+                  <div class="modal-footer #bbdefb blue lighten-4">
                   <center>
                       <button id='enviarJuego' class="btn waves-effect waves-light #1e88e5 blue darken-1">Finalizar</button>
                   </center>

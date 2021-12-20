@@ -106,7 +106,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                         <span class="card-title">${data.Search[index].Title} -${data.Search[index].Year}</span><br>
                                         <a class="waves-effect waves-light btn modal-trigger #1e88e5 blue darken-1" id="resultadosmodal" href="#modal${index}" ><i class="material-icons">add</i></a>
                                         </center>
-                                        <div id="modal${index}" class="modal #64b5f6 blue lighten-2">
+                                        <div id="modal${index}" class="modal #bbdefb blue lighten-4">
                                             <div class="modal-content">
                                                 <center>
                                                 <h3>${data.Search[index].Title}</h3>
@@ -146,8 +146,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                                                 </div>
                                                 <div class"input-field">
                                                     <label for="comentario">Comentario<label>
-                                                    <textarea id="comentario" class="materialize-textarea" data-length="200"></textarea>
-                                                    <div id="mensajeGuardar"><div> 
+                                                    <textarea id="comentario" class="materialize-textarea" data-length="200"></textarea> 
                                                 </div>
                                                 <div>
                                                     <button id="valoracion" value="${index}" class="waves-effect waves-light btn #1e88e5 blue darken-1 Guardar-valoracion">Guardar</button>
@@ -174,9 +173,10 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
 
+                        let valoracion = e.target.parentElement.querySelector("[name='valoracion']:checked").value; 
                         let favorito = e.target.parentElement.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
-                        let comentario = document.getElementById("comentario").value;
-                        let valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']:checked").value; 
+                        let comentario = e.target.parentElement.querySelector("#comentario").value;
+                        
                         let user = document.getElementById("username").value;
                         const numPelis = e.target.value;
                         console.log("Añado la pelicula " + numPelis);
@@ -247,16 +247,16 @@ function videos(){
                  <div>
                     <br>
                     <label>
-                        <input name="${data.peliculas[i].choice1}" type="button" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #64b5f6 blue lighten-2"/>
+                        <input name="${data.peliculas[i].choice1}" type="button" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #bbdefb blue lighten-4"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice2}" type="button" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #64b5f6 blue lighten-2"/>
+                        <input name="${data.peliculas[i].choice2}" type="button" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #bbdefb blue lighten-4"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice3}" type="button" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #64b5f6 blue lighten-2"/>
+                        <input name="${data.peliculas[i].choice3}" type="button" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #bbdefb blue lighten-4"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice4}" type="button" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #64b5f6 blue lighten-2"/>
+                        <input name="${data.peliculas[i].choice4}" type="button" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #bbdefb blue lighten-4"/>
                     </label>
                 </div>
             </form>
