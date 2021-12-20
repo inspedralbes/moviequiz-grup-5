@@ -72,6 +72,7 @@ include "header.html";
               <center>
                 <button id="busqueda" class="btn waves-effect waves-light #2196f3 blue" type="button">Buscar</button>
                 <button id="delete" class="btn waves-effect waves-light red" type="button">Borrar</button>
+                <button id="delete" class="btn waves-effect waves-light green" type="button">Mis Pelis</button>
               </center>
             </div>
       </nav>

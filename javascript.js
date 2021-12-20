@@ -24,7 +24,7 @@ let p = document.getElementById("pwd").value;
 
                 .then(data => {
 
-                    console.log(data);
+                    
                     if (data.exito == true) {
                         conectado = 1;
                         document.getElementById("mensaje").innerHTML = "Bienvenido a Movie Quiz 5 " + data.nombre;
@@ -181,7 +181,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
                         
                         let user = document.getElementById("username").value;
                         const numPelis = e.target.value;
-                        console.log("Añado la pelicula " + numPelis);
                         const datosPeli = data.Search[numPelis];
                         
                         const datosEnvio = new FormData();
@@ -196,8 +195,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
                         fetch(`./pelicula.php`, {
                                 method: 'POST',
                                 body: datosEnvio
-                            }).then(data => {
-                                console.log(data);
                             });
                     }
                 });
@@ -269,6 +266,7 @@ function videos(){
         `;
         };
         document.getElementById("contenidoJuego").innerHTML = htmlStr;
+        document.getElementById("")
     });
     });
 
