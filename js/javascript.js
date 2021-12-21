@@ -245,20 +245,18 @@ function videos(){
             <div>
                  <div>
                     <br>
-                    <form method="post">
                     <label>
-                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[0]}"/><span>${data[i].juego.opciones[0]}</span>
+                        <input name="juego${i}" type="radio" value="${data[i].juego.opciones[0]}"/><span>${data[i].juego.opciones[0]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[1]}"/><span>${data[i].juego.opciones[1]}</span>
+                        <input name="juego${i}" type="radio" value="${data[i].juego.opciones[1]}"/><span>${data[i].juego.opciones[1]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[2]}"/><span>${data[i].juego.opciones[2]}</span>
+                        <input name="juego${i}" type="radio" value="${data[i].juego.opciones[2]}"/><span>${data[i].juego.opciones[2]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[3]}"/><span>${data[i].juego.opciones[3]}</span>
+                        <input name="juego${i}" type="radio" value="${data[i].juego.opciones[3]}"/><span>${data[i].juego.opciones[3]}</span>
                     </label>
-                    </form>
                 </div>
             
             </div>
@@ -270,16 +268,41 @@ function videos(){
         document.getElementById("enviarJuego").addEventListener("click",function(){
             
             
-            //const salida={id: data[i].juego.id};
-            //const salida={nombre: data[i].juego.nombre};
+            let juego0 = document.querySelector("[name='juego0']:checked").value;
+            let juego1 = document.querySelector("[name='juego1']:checked").value;
+            let juego2 = document.querySelector("[name='juego2']:checked").value;
+            let juego3 = document.querySelector("[name='juego3']:checked").value;
+            let juego4 = document.querySelector("[name='juego4']:checked").value;
+
+            console.log(juego0);
+            console.log(juego1);
+            console.log(juego2);
+            console.log(juego3);
+            console.log(juego4);
+
+            let datosEnvio = new FormData();
+
+                for (i = 0; i < json.length; i++) {
+                    datosEnvio.append('id_partida', data[i].juego.nombre);
+                    datosEnvio.append('juego0', juego0);
+                    datosEnvio.append('juego1', juego1);
+                    datosEnvio.append('juego2', juego2);
+                    datosEnvio.append('juego3', juego3);
+                    datosEnvio.append('juego4', juego4);
+                }
+
+                let JsonJuego = {
+                    id_partida: '',
+                    respuestas:
+                        [{ImdbID: '', respuesta: ''}]
+                };
+                console.log(JsonJuego);
+                let json = JSON.stringify(JsonJuego);
+                console.log(json);
 
             const myJSON = JSON.stringify(salida);
 
-
-            const datosEnvio = new FormData();
-            datosEnvio.append('datos', myJSON);
-            
-            fetch(`./php/pelicula.php`, {
+            fetch(`./php/juegoAca.php`, {
                 method: 'POST',
                 body: datosEnvio
                 
