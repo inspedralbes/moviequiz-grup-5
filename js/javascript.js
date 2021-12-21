@@ -305,10 +305,19 @@ function videos(){
                     });
                   };
 
-                json = JSON.stringify(datos);
+                datosGame = JSON.stringify(datos);
 
-                console.log(json);
-            
+                console.log(datosGame);
+
+                const datosEnviar = new FormData();
+                datosEnviar.append("json",datosGame);
+
+                fetch(`http://http://moviequiz5.alumnes.inspedralbes.cat/php/resultadojuego.php`,{
+                    method: 'POST',
+                    body: datosEnviar
+            });
+
+
 
 
             fetch(`./php/juegoAca.php`, {

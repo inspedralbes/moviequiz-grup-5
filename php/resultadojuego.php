@@ -15,10 +15,12 @@ try {
 }
 
 
-
-$data = file_get_contents("./../json/recibir_manual.json");
-$resultat = json_decode($data, true);
-
+print_r($_POST);
+$datos=$_POST["json"];
+$datos = json_decode(file_get_contents("php://input").true);
+//$resultat = json_decode($datos, true);
+print_r($datos);
+/*
 $aciertos = 0;
 $fallos = 0;
 $puntuacion =0;
@@ -42,9 +44,10 @@ for($i =0; $i<=4; $i++) {
 }
 $puntuacion = ($aciertos*3) - ($fallos);
 
-$insert = "INSERT INTO partida(id_partida, nom_partida, respuesta, aciertos, fallos, puntuacion) VALUES ('$id_partida', '$nom_partida','$respuestas', '$aciertos', '$fallos', '$puntuacion')";
+$insert = "INSERT INTO partida(partida, usuari, encerts, errades, puntuacion) VALUES ('$id_partida', '$nom_partida','$respuestas', '$aciertos', '$fallos', '$puntuacion')";
 $resultado = mysqli_query($conn, $insert);
 $resultados = array('id_partida' => $id_partida, 'nom_partida' => $nom_partida, 'aciertos' => $aciertos, 'fallos' => $fallos, 'puntuacion' => $puntuacion);
 echo json_encode($resultados);
 mysqli_close($conn);
+*/
 ?>

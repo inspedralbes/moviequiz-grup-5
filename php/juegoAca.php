@@ -40,7 +40,7 @@ print_r($query->errorInfo());
 
 
 $query = $connection->prepare("INSERT INTO partida_jugada (partida, usuari, encerts, errades) VALUES (:idPartida,:user,:encerts,:errades)");
-$query->bindParam("idPartida", $, PDO::PARAM_STR);
+$query->bindParam("idPartida", $idPartida, PDO::PARAM_STR);
 $query->bindParam("user", $user, PDO::PARAM_STR);
 $query->bindParam("encerts", $encerts, PDO::PARAM_STR);
 $query->bindParam("errades", $errades, PDO::PARAM_STR);
