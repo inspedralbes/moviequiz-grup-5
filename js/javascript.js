@@ -173,7 +173,6 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 var instances = M.Modal.init(elems,{});
                 //le envio a php los datos por metodo post.
                 document.getElementById("resultados").addEventListener("click", function(e) {
-                    console.log(e.target);
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
 
@@ -233,7 +232,6 @@ function videos(){
         fetch('./php/juego.php')
         .then(response => response.json() )
         .then(data => {
-        console.log(data);
         
         let htmlStr="";
         for (let i = 0; i < 5; i++) {
