@@ -268,20 +268,21 @@ function videos(){
         };
         document.getElementById("contenidoJuego").innerHTML = htmlStr;
         document.getElementById("enviarJuego").addEventListener("click",function(){
+            
+            
+            const salida={id: data[i].juego.id};
+            const salida={nombre: data[i].juego.nombre};
+
+            const myJSON = JSON.stringify(salida);
+
+
             const datosEnvio = new FormData();
-            for(let i = 0; i < 5; i++){
-                datosEnvio.append('nombre', data[i].juego.nombre);
-                datosEnvio.append('id', data[i].juego.id);
-                datosEnvio.append('opcion1', data[i].juego.opciones[0]);
-                datosEnvio.append('opcion2', data[i].juego.opciones[1]);
-                datosEnvio.append('opcion3', data[i].juego.opciones[2]);
-                datosEnvio.append('opcion4', data[i].juego.opciones[3]);
-            }
-            const myJSON = JSON.stringify(datosEnvio);
+            datosEnvio.append('datos', myJSON);
+            
             fetch(`./php/pelicula.php`, {
                 method: 'POST',
                 body: datosEnvio
-                //string
+                
             });      
             
         });    
