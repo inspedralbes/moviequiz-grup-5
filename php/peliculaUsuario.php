@@ -4,10 +4,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-define('USER', 'a20marsolluc_admin');
-define('PASSWORD', 'Admin1234');
+define('USER', 'root');
+define('PASSWORD', '');
 define('HOST', 'localhost');
-define('DATABASE', 'a20marsolluc_moviequiz');
+define('DATABASE', 'moviekiza');
 
 try {
     $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
@@ -26,6 +26,7 @@ $query->execute();
   $peliculas['pelicules'][] = $row;
   // [-15 , -10 , -5 , -2  , 2 , +5 , +10 ,+15]
  }
- $peliculas['pelicules'][] = rand([-15 , -10 , -5 , -2  , 2 , +5 , +10 ,+15]) ;
+ $peliculas['pelicules']['choice2'] = rand(-15,+15) ;
+ print_r($peliculas);
  
  echo json_encode($peliculas);
