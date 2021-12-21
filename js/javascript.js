@@ -177,9 +177,9 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
 
-                        let valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']:checked").value; 
-                        let favorito = e.target.parentElement.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
-                        let comentario = e.target.parentElement.querySelectorAll("#comentario").value;
+                        let valoracion = e.target.parentNode.parentNode.querySelector("[name='valoracion']:checked").value; 
+                        let favorito = e.target.parentNode.parentNode.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
+                        let comentario = e.target.parentNode.parentNode.querySelector("#comentario").value;
                         
                         let user = document.getElementById("username").value;
                         const numPelis = e.target.value;
@@ -247,23 +247,23 @@ function videos(){
       
         <div>
         <center>
-            <h5>${data.peliculas[i].Nombre}</h5>
-            <img src='${data.peliculas[i].Poster}' width="200px">
+            <h5>${data[0]}</h5>
+            <img src='${data[1]}' width="200px">
             <div>
                  <div>
                     <br>
                     <form method="post">
                     <label>
-                        <input name="puntuacion1" type="radio" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion1" type="radio" value="${data[4]}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="puntuacion2" type="radio" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion2" type="radio" value="${data[4].choice2}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="puntuacion3" type="radio" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion3" type="radio" value="${data[4].choice3}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="puntuacion4" type="radio" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion4" type="radio" value="${data[4].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     </form>
                 </div>

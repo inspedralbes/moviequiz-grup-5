@@ -53,5 +53,5 @@ for ($i=0;$i<4;$i++) {
 
 
 }
-$output_json=["juego"][$row['titulo'], $row['añoProd'], $row['idPeli'], $row['poster'], $opciones];
+$output_json=[$row['titulo'], $row['añoProd'], $row['idPeli'], $row['poster'], $opciones];
 echo json_encode($output_json);
