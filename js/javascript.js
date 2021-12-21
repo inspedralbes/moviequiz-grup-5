@@ -274,16 +274,17 @@ function videos(){
             let juego3 = document.querySelector("[name='juego3']:checked").value;
             let juego4 = document.querySelector("[name='juego4']:checked").value;
 
-            console.log(juego0);
-            console.log(juego1);
-            console.log(juego2);
-            console.log(juego3);
-            console.log(juego4);
+            var respuestas = [];
+            respuestas[0]=juego0;
+            respuestas[1]=juego1;
+            respuestas[2]=juego2;
+            respuestas[3]=juego3;
+            respuestas[4]=juego4;
 
             let datosEnvio = new FormData();
 
-                for (i = 0; i < json.length; i++) {
-                    datosEnvio.append('id_partida', data[i].juego.nombre);
+                for (i = 0; i < data.length; i++) {
+                    datosEnvio.append('id_partida', data[i].juego.id);
                     datosEnvio.append('juego0', juego0);
                     datosEnvio.append('juego1', juego1);
                     datosEnvio.append('juego2', juego2);
@@ -291,16 +292,24 @@ function videos(){
                     datosEnvio.append('juego4', juego4);
                 }
 
-                let JsonJuego = {
-                    id_partida: '',
-                    respuestas:
-                        [{ImdbID: '', respuesta: ''}]
-                };
-                console.log(JsonJuego);
-                let json = JSON.stringify(JsonJuego);
-                console.log(json);
+                var datos = {
+                    'partida' :[]
+                  };
+                  
+                  //guardas los datos
+                  for (var i = 0; i < data.length; i++) {
+                  
+                    datos.partida.push({
+                      "id": data[i].juego.id,
+                      "respuesta": respuestas[i],
+                    });
+                  };
 
-            const myJSON = JSON.stringify(salida);
+                json = JSON.stringify(datos);
+
+                console.log(json);
+            
+
 
             fetch(`./php/juegoAca.php`, {
                 method: 'POST',
