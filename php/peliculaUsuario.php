@@ -16,7 +16,7 @@ try {
 }
 
  
-$query = $connection->prepare("SELECT * FROM pelicula");
+$query = $connection->prepare("SELECT * FROM pelicula ORDER BY RAND() LIMIT 5");
 $query->execute();
  
  $peliculas = array();
