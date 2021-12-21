@@ -110,7 +110,7 @@ include "header.html";
             </div>
             <div id="divJuego">
 
-              <div id="modalGame" class="modal modal-fixed-footer #2196f3 blue">
+              <div id="modalGame" class="modal modal-fixed-footer #90caf9 blue lighten-3">
                 <div class="modal-content">
 
                     <h1 style="text-align:center;">Movie Quiz</h1>
@@ -118,7 +118,7 @@ include "header.html";
                       
                     </div>
                 </div>
-                  <div class="modal-footer #90caf9 blue lighten-3">
+                  <div class="modal-footer #2196f3 blue">
                   <center>
                       <button id='enviarJuego' class="btn waves-effect waves-light #2196f3 blue">Finalizar</button>
                   </center>

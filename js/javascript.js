@@ -173,13 +173,12 @@ document.getElementById("busqueda").addEventListener("click",function(){
                 var instances = M.Modal.init(elems,{});
                 //le envio a php los datos por metodo post.
                 document.getElementById("resultados").addEventListener("click", function(e) {
-                    console.log(e.target);
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
 
-                        let valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']:checked").value; 
-                        let favorito = e.target.parentElement.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
-                        let comentario = e.target.parentElement.querySelectorAll("#comentario").value;
+                        let valoracion = e.target.parentNode.parentNode.querySelector("[name='valoracion']:checked").value; 
+                        let favorito = e.target.parentNode.parentNode.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
+                        let comentario = e.target.parentNode.parentNode.querySelector("#comentario").value;
                         
                         let user = document.getElementById("username").value;
                         const numPelis = e.target.value;
@@ -233,37 +232,31 @@ function videos(){
         fetch('./php/juego.php')
         .then(response => response.json() )
         .then(data => {
-        console.log(data);
         
         let htmlStr="";
-        htmlStr+=`
-        <form method="post">
-        <input name="nomPartida" type="text" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
-        </form>
-        `;
         for (let i = 0; i < 5; i++) {
         
         htmlStr += `
       
         <div>
         <center>
-            <h5>${data.peliculas[i].Nombre}</h5>
-            <img src='${data.peliculas[i].Poster}' width="200px">
+            <h5>${data[i].juego.nombre}</h5>
+            <img src='${data[i].juego.poster}' width="200px">
             <div>
                  <div>
                     <br>
                     <form method="post">
                     <label>
-                        <input name="puntuacion1" type="radio" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[0]}"/><span>${data[i].juego.opciones[0]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion2" type="radio" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[1]}"/><span>${data[i].juego.opciones[1]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion3" type="radio" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[2]}"/><span>${data[i].juego.opciones[2]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion4" type="radio" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[3]}"/><span>${data[i].juego.opciones[3]}</span>
                     </label>
                     </form>
                 </div>
@@ -274,7 +267,24 @@ function videos(){
         `;
         };
         document.getElementById("contenidoJuego").innerHTML = htmlStr;
-        //document.getElementById("")
+        document.getElementById("enviarJuego").addEventListener("click",function(){
+            const datosEnvio = new FormData();
+            for(let i = 0; i < 5; i++){
+                datosEnvio.append('nombre', data[i].juego.nombre);
+                datosEnvio.append('id', data[i].juego.id);
+                datosEnvio.append('opcion1', data[i].juego.opciones[0]);
+                datosEnvio.append('opcion2', data[i].juego.opciones[1]);
+                datosEnvio.append('opcion3', data[i].juego.opciones[2]);
+                datosEnvio.append('opcion4', data[i].juego.opciones[3]);
+            }
+            const myJSON = JSON.stringify(datosEnvio);
+            fetch(`./php/pelicula.php`, {
+                method: 'POST',
+                body: datosEnvio
+                //string
+            });      
+            
+        });    
     });
     });
 
@@ -342,14 +352,4 @@ document.getElementById("misDatosbtn").addEventListener("click",function(){
     document.getElementById("DatosPersonales").innerHTML = htmlStr;
     });
 });
-/*Swal.fire({
-    title: 'Error!',
-    text: 'Do you want to continue',
-    icon: 'error',
-    confirmButtonText: 'Cool'
 
-
-
-           
-
-})*/
