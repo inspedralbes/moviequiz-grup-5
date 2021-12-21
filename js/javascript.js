@@ -23,7 +23,6 @@ let p = document.getElementById("pwd").value;
                 }).then(response => response.json())
 
                 .then(data => {
-                    console.log(data);
                     
                     if (data.exito == true) {
                         
@@ -292,7 +291,6 @@ function videos(){
         })
         .then(response => response.json() )
         .then(data => {
-            console.log(data);
             
             let htmlStr="";
             htmlStr+="<center><h4>Peliculas Favoritas<h4></center>";
@@ -301,7 +299,7 @@ function videos(){
                     htmlStr+= `
 
 
-                    <div class="col s4 m6 l4">
+                    <div class="col s4 m6 l12">
                       <div class="card">
                         <div class="card-image">
                           <img src="${data.misPeliculas[i].poster}">
