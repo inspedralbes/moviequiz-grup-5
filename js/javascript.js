@@ -178,9 +178,9 @@ document.getElementById("busqueda").addEventListener("click",function(){
                     if (e.target.classList.contains("Guardar-valoracion")) {
                         
 
-                        let valoracion = e.target.parentElement.querySelector("[name='valoracion']:checked").value; 
+                        let valoracion = e.target.parentElement.querySelectorAll("[name='valoracion']:checked").value; 
                         let favorito = e.target.parentElement.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
-                        let comentario = e.target.parentElement.querySelector("#comentario").value;
+                        let comentario = e.target.parentElement.querySelectorAll("#comentario").value;
                         
                         let user = document.getElementById("username").value;
                         const numPelis = e.target.value;
@@ -231,7 +231,7 @@ function videos(){
 };
 //funcion encargada de crear un juego
     document.getElementById("juego").addEventListener("click",function(){
-        fetch('./json/output_generar_partida.json')
+        fetch('./php/peliculaUsuario.php')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
