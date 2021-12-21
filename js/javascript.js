@@ -230,7 +230,7 @@ function videos(){
 };
 //funcion encargada de crear un juego
     document.getElementById("juego").addEventListener("click",function(){
-        fetch('./php/peliculaUsuario.php')
+        fetch('./php/juego.php')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
@@ -252,7 +252,7 @@ function videos(){
             <div>
                  <div>
                     <br>
-
+                    <form method="post">
                     <label>
                         <input name="puntuacion1" type="radio" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
@@ -265,8 +265,9 @@ function videos(){
                     <label>
                         <input name="puntuacion4" type="radio" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
+                    </form>
                 </div>
-            </form>
+            
             </div>
         </center>
         </div><br>  
