@@ -4,10 +4,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-define('USER', 'root');
-define('PASSWORD', '');
+define('USER', 'a20marsolluc_admin');
+define('PASSWORD', 'Admin1234');
 define('HOST', 'localhost');
-define('DATABASE', 'moviekiza');
+define('DATABASE', 'a20marsolluc_moviequiz');
 
 try {
     $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
@@ -22,7 +22,7 @@ $query->execute();
 
  
  $peliculas = array();
-for ($i=0;$i<4;$i++) {
+for ($i=0;$i<5;$i++) {
      $row = $query->fetch(PDO::FETCH_ASSOC);
 
 
@@ -35,7 +35,7 @@ for ($i=0;$i<4;$i++) {
     $opciones = [ $choice1, $choice2, $choice3, $choice4];
 
     Shuffle($opciones);
-    $output_json[$i] = array( 'titulo'=>[$row['titulo'], 'año'=>$row['añoProd'], 'id'=>$row['idPeli'], 'poster'=>$row['poster'], 'opciones'=>$opciones]);
+    $output_json[$i] = array( 'juego'=>['nombre'=>$row['titulo'], 'año'=>$row['añoProd'], 'id'=>$row['idPeli'], 'poster'=>$row['poster'], 'opciones'=>$opciones]);
     /*
     echo "<br>";
     print_r($opciones);

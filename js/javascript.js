@@ -236,34 +236,29 @@ function videos(){
         console.log(data);
         
         let htmlStr="";
-        htmlStr+=`
-        <form method="post">
-        <input name="nomPartida" type="text" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
-        </form>
-        `;
         for (let i = 0; i < 5; i++) {
         
         htmlStr += `
       
         <div>
         <center>
-            <h5>${data[0]}</h5>
-            <img src='${data[1]}' width="200px">
+            <h5>${data[i].juego.nombre}</h5>
+            <img src='${data[i].juego.poster}' width="200px">
             <div>
                  <div>
                     <br>
                     <form method="post">
                     <label>
-                        <input name="puntuacion1" type="radio" value="${data[4]}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[0]}"/><span>${data[i].juego.opciones[0]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion2" type="radio" value="${data[4].choice2}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[1]}"/><span>${data[i].juego.opciones[1]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion3" type="radio" value="${data[4].choice3}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[2]}"/><span>${data[i].juego.opciones[2]}</span>
                     </label>
                     <label>
-                        <input name="puntuacion4" type="radio" value="${data[4].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion" type="radio" value="${data[i].juego.opciones[3]}"/><span>${data[i].juego.opciones[3]}</span>
                     </label>
                     </form>
                 </div>
@@ -274,7 +269,24 @@ function videos(){
         `;
         };
         document.getElementById("contenidoJuego").innerHTML = htmlStr;
-        //document.getElementById("")
+        document.getElementById("enviarJuego").addEventListener("click",function(){
+            const datosEnvio = new FormData();
+            for(let i = 0; i < 5; i++){
+                datosEnvio.append('nombre', data[i].juego.nombre);
+                datosEnvio.append('id', data[i].juego.id);
+                datosEnvio.append('opcion1', data[i].juego.opciones[0]);
+                datosEnvio.append('opcion2', data[i].juego.opciones[1]);
+                datosEnvio.append('opcion3', data[i].juego.opciones[2]);
+                datosEnvio.append('opcion4', data[i].juego.opciones[3]);
+            }
+            const myJSON = JSON.stringify(datosEnvio);
+            fetch(`./php/pelicula.php`, {
+                method: 'POST',
+                body: datosEnvio
+                //string
+            });      
+            
+        });    
     });
     });
 
@@ -342,14 +354,4 @@ document.getElementById("misDatosbtn").addEventListener("click",function(){
     document.getElementById("DatosPersonales").innerHTML = htmlStr;
     });
 });
-/*Swal.fire({
-    title: 'Error!',
-    text: 'Do you want to continue',
-    icon: 'error',
-    confirmButtonText: 'Cool'
 
-
-
-           
-
-})*/
