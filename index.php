@@ -57,7 +57,7 @@ include "header.html";
                   </div>
                 </li>
                 <li>
-                  <p>Aun no tienes una cuenta?<a href="./php/signup.php"> Registrate</a></p>
+                  <p>¿Aún no tienes una cuenta?<a href="./php/signup.php"> Regístrate</a></p>
                 </li>  
               </ul>   
             </div>  
