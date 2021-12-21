@@ -313,7 +313,7 @@ function videos(){
 
             fetch(`./php/juegoAca.php`, {
                 method: 'POST',
-                body: datosEnvio
+                body: json
                 
             });      
             
