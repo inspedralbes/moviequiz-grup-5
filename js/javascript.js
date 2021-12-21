@@ -41,7 +41,7 @@ let p = document.getElementById("pwd").value;
 
                         document.getElementById("navbar").classList.remove("noactive");
                         document.getElementById("navbar").classList.add("active");
-
+                        
                     } else {
                         alert("¡¡Nombre de Usuario o Contraseña incorrecta!!");
                     }
@@ -309,19 +309,25 @@ function videos(){
     });
 });
 document.getElementById("misDatos").addEventListener("click",function(){
+
     let usuario = document.getElementById("username").value;
-
     const datosEnvio = new FormData();
+        datosEnvio.append('user', usuario);
+    fetch(`./php/usuario.php`, {
 
-            datosEnvio.append('usuario', usuario);
+        method: 'POST',
 
-            fetch(`./php/mostrardatos.php`, {
+        body: datosEnvio
 
-                method: 'POST',
-
-                body: datosEnvio
-            });
-
+    }).then(response => response.json()).then(data => {
+        console.log(data);
+    let htmlStr="";
+    htmlStr+=`
+        <img src="${data.imagen}"  width="100">
+        <h5>Usuario: ${data.nombre}</h5>
+    `;
+    document.getElementById("DatosPersonales").innerHTML = htmlStr;
+    });
 });
 /*Swal.fire({
     title: 'Error!',

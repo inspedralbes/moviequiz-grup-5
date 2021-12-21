@@ -139,7 +139,6 @@ include "header.html";
       <a href="#!" class="modal-close waves-effect waves-green btn-flat #90caf9 blue lighten-3">salir</a>
     </div>
 </div>
-
 <script type="text/javascript" src="./js/javascript.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
