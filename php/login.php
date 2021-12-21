@@ -1,5 +1,5 @@
 <?php
-include ('./model/players.php');
+include ('../model/players.php');
 
 if(!empty($_POST['username']) && !empty($_POST['passwd'])){
 $user = $_POST['username'];
