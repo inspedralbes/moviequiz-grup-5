@@ -270,8 +270,8 @@ function videos(){
         document.getElementById("enviarJuego").addEventListener("click",function(){
             
             
-            const salida={id: data[i].juego.id};
-            const salida={nombre: data[i].juego.nombre};
+            //const salida={id: data[i].juego.id};
+            //const salida={nombre: data[i].juego.nombre};
 
             const myJSON = JSON.stringify(salida);
 
