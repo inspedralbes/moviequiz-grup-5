@@ -28,6 +28,7 @@ include "header.html";
                 <img id="perfileImg" src="#" width="75px" />
                 <br>
                 <button id="btnLogout" class="btn waves-effect waves-light #2196f3 blue" type="button">Salir</button>
+                <a class="waves-effect waves-light btn modal-trigger green" href="#misDatos">Mis Datos</a>
                 </center>
                 <br>
             </div>
@@ -55,6 +56,9 @@ include "header.html";
                     <center>
                   </div>
                 </li>
+                <li>
+                  <p>Aun no tienes una cuenta?<a href="./php/signup.php"> Registrate</a></p>
+                </li>  
               </ul>   
             </div>  
         </div>
@@ -83,7 +87,7 @@ include "header.html";
 
             <center>
               <h4>MovieQuiz</h4>
-              <a class="waves-effect waves-light btn modal-trigger" href="#modalGame" id="juego">Jugar</a>
+              <a class="waves-effect waves-light btn modal-trigger green" href="#modalGame" id="juego">Jugar</a>
               <br>
             </center>
           
@@ -123,13 +127,24 @@ include "header.html";
       </div>
     </div>      
 </div>  
-
+<div id="misDatos" class="modal #90caf9 blue lighten-3">
+    <div class="modal-content #90caf9 blue lighten-3">
+      <center>
+      <h2>Mis Datos</h2>
+      <div id="DatosPersonales">
+      </div>
+      <center>
+    </div>
+    <div class="modal-footer #2196f3 blue">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat #90caf9 blue lighten-3">salir</a>
+    </div>
+</div>
 
 <script type="text/javascript" src="./js/javascript.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

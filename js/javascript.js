@@ -23,7 +23,7 @@ let p = document.getElementById("pwd").value;
                 }).then(response => response.json())
 
                 .then(data => {
-
+                    console.log(data);
                     
                     if (data.exito == true) {
                         
@@ -64,6 +64,10 @@ document.getElementById("btnLogout").addEventListener("click", function() {
     document.getElementById("navbar").classList.add("noactive");
     
 });
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+  });
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
@@ -246,7 +250,6 @@ function videos(){
             <h5>${data.peliculas[i].Nombre}</h5>
             <img src='${data.peliculas[i].Poster}' width="200px">
             <div>
-            <form method="post">
                  <div>
                     <br>
 
@@ -305,9 +308,29 @@ function videos(){
         document.getElementById("resultados").innerHTML = htmlStr;
     });
 });
+document.getElementById("misDatos").addEventListener("click",function(){
+    let usuario = document.getElementById("username").value;
+
+    const datosEnvio = new FormData();
+
+            datosEnvio.append('usuario', usuario);
+
+            fetch(`./php/mostrardatos.php`, {
+
+                method: 'POST',
+
+                body: datosEnvio
+            });
+
+});
 /*Swal.fire({
     title: 'Error!',
     text: 'Do you want to continue',
     icon: 'error',
     confirmButtonText: 'Cool'
+
+
+
+           
+
 })*/
