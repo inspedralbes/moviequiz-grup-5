@@ -24,7 +24,6 @@ try {
     $valoracion = $_POST['valoracion'];
     $comentario = $_POST['comentario'];
 
-    //$player->insert()
 
         //BUSCAR FORMA D INTRODUCIR USUAIRO Y PELICULA
         $query = $connection->prepare("INSERT INTO pelicula (idPeli, titulo, añoProd,poster,usuario) VALUES (:idPeli,:titulo,:anyo,:poster,:user)");
