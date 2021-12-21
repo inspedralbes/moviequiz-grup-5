@@ -255,16 +255,16 @@ function videos(){
                     <br>
 
                     <label>
-                        <input name="${data.peliculas[i].choice1}" type="button" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion1" type="radio" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice2}" type="button" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion2" type="radio" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice3}" type="button" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion3" type="radio" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice4}" type="button" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion4" type="radio" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                 </div>
             </form>
