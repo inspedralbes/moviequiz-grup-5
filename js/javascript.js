@@ -232,6 +232,11 @@ function videos(){
         console.log(data);
         
         let htmlStr="";
+        htmlStr+=`
+        <form method="post">
+        <input name="nomPartida" type="text" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+        </form>
+        `;
         for (let i = 0; i < 5; i++) {
         
         htmlStr += `
@@ -244,9 +249,7 @@ function videos(){
             <form method="post">
                  <div>
                     <br>
-                     <label>
-                        <input name="nomPartida" type="text" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
-                    </label>
+
                     <label>
                         <input name="${data.peliculas[i].choice1}" type="button" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
@@ -302,9 +305,9 @@ function videos(){
         document.getElementById("resultados").innerHTML = htmlStr;
     });
 });
-Swal.fire({
+/*Swal.fire({
     title: 'Error!',
     text: 'Do you want to continue',
     icon: 'error',
     confirmButtonText: 'Cool'
-})
+})*/

@@ -18,7 +18,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include ('./model/players.php');
+include ('../model/players.php');
  define('USER', 'a20marsolluc_admin');
  define('PASSWORD', 'Admin1234');
  define('HOST', 'localhost');
