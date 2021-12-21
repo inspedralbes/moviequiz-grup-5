@@ -64,6 +64,7 @@ document.getElementById("btnLogout").addEventListener("click", function() {
     document.getElementById("navbar").classList.add("noactive");
     
 });
+//funciones de redirecionamiento i modals
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, {});
@@ -254,16 +255,16 @@ function videos(){
                     <br>
 
                     <label>
-                        <input name="${data.peliculas[i].choice1}" type="button" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion1" type="radio" value="${data.peliculas[i].choice1}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice2}" type="button" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion2" type="radio" value="${data.peliculas[i].choice2}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice3}" type="button" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion3" type="radio" value="${data.peliculas[i].choice3}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                     <label>
-                        <input name="${data.peliculas[i].choice4}" type="button" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
+                        <input name="puntuacion4" type="radio" value="${data.peliculas[i].choice4}" class="btn waves-effect waves-light #90caf9 blue lighten-3"/>
                     </label>
                 </div>
             </form>
@@ -276,39 +277,50 @@ function videos(){
         //document.getElementById("")
     });
     });
+
+    //funcion que devuelve las peliculas guardadas por el usuario
     document.getElementById("mispelis").addEventListener("click",function(){
-        fetch('./php/peliculaUsuario.php')
+
+        let usuario = document.getElementById("username").value;
+        const datosEnvio = new FormData();
+        datosEnvio.append('user', usuario);
+        fetch('./php/MisPeliculas.php',{
+
+            method: 'POST',
+
+            body: datosEnvio
+        })
         .then(response => response.json() )
         .then(data => {
-        console.log(data);
-        let user = document.getElementById("username").value;
-        let htmlStr="";
-        if(user==data.pelicules.usuario){
-        htmlStr+="<center><h4>Busqueda de Peliculas<h4></center>";
+            console.log(data);
+            
+            let htmlStr="";
+            htmlStr+="<center><h4>Peliculas Favoritas<h4></center>";
 
-        
-            for (let i = 0; i < 5; i++) {
-                htmlStr+= `
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="${data.pelicules[i].poster}">
+                for (let i = 0; i < data.misPeliculas.length; i++) {
+                    htmlStr+= `
+
+
+                    <div class="col s4 m6 l4">
+                      <div class="card">
+                        <div class="card-image">
+                          <img src="${data.misPeliculas[i].poster}">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">${data.misPeliculas[i].titulo}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">${data.pelicules[i].titulo}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">${data.pelicules[i].titulo}<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-                `;
-}
-        }
+
+                    `;
+                }
+
         document.getElementById("resultados").innerHTML = htmlStr;
     });
 });
-document.getElementById("misDatos").addEventListener("click",function(){
+
+// funcion que devuelve los datos de usuario 
+document.getElementById("misDatosbtn").addEventListener("click",function(){
 
     let usuario = document.getElementById("username").value;
     const datosEnvio = new FormData();
@@ -320,11 +332,13 @@ document.getElementById("misDatos").addEventListener("click",function(){
         body: datosEnvio
 
     }).then(response => response.json()).then(data => {
-        console.log(data);
+        
     let htmlStr="";
     htmlStr+=`
-        <img src="${data.imagen}"  width="100">
-        <h5>Usuario: ${data.nombre}</h5>
+        <img src="https://randomuser.me/api/portraits/men/23.jpg"  width="100">
+        <p><b>ID:</b> ${data.usuario[0].id}</p>
+        <p><b>Usuario:</b> ${data.usuario[0].username}</p>
+        <p><b>Email:</b> ${data.usuario[0].email}</p>
     `;
     document.getElementById("DatosPersonales").innerHTML = htmlStr;
     });

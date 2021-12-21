@@ -16,17 +16,17 @@ try {
 }
 $user = $_POST['user'];
  
-$query = $connection->prepare("SELECT * FROM usuario WHERE username='$user'");
+$query = $connection->prepare("SELECT * FROM pelicula WHERE usuario='$user'");
 $query->execute();
  
- $usuario = array();
+ $pelicula = array();
  
  while($row=$query->fetch(PDO::FETCH_ASSOC)){
   
-  $usuario['usuario'][] = $row;
+  $pelicula['misPeliculas'][] = $row;
 
  }
 
- echo json_encode($usuario);
+ echo json_encode($pelicula);
 
  ?>

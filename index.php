@@ -28,7 +28,7 @@ include "header.html";
                 <img id="perfileImg" src="#" width="75px" />
                 <br>
                 <button id="btnLogout" class="btn waves-effect waves-light #2196f3 blue" type="button">Salir</button>
-                <a class="waves-effect waves-light btn modal-trigger green" href="#misDatos">Mis Datos</a>
+                <a class="waves-effect waves-light btn modal-trigger green" id="misDatosbtn" href="#misDatos">Mis Datos</a>
                 </center>
                 <br>
             </div>
