@@ -343,7 +343,7 @@ function videos(){
                     htmlStr+= `
 
 
-                    <div class="col s4 m6 l12">
+                    <div class="col s4 m4 l4">
                       <div class="card">
                         <div class="card-image">
                           <img src="${data.misPeliculas[i].poster}">
