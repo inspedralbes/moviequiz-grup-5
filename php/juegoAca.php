@@ -14,7 +14,13 @@ try {
 } catch (PDOException $e) {
     exit("Error: " . $e->getMessage());
 }
+print_r($_POST);
+$datos=$_POST["json"];
+$datos = json_decode(file_get_contents("php://input").true);
+//$resultat = json_decode($datos, true);
+print_r($datos);
 
+/*
 $user = $_POST['user'];
 $idpeli = $_POST['idPeli'];
 $titulo = $_POST['titulo'];
@@ -55,5 +61,5 @@ if ($result) {
 } else {
     echo '<center><p class="error">No se han podido guardar tus datos!</p></center>';
 }
-
+*/
 ?>
