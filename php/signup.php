@@ -102,7 +102,7 @@ if (isset($_POST['register'])) {
             <button class="btn waves-effect waves-light #42a5f5 blue lighten-1" type="submit" name="register">Registrarse<i class="material-icons right">send</i></button>
         </form>
     <div class="input-field col s3">
-        <a class="waves-effect waves-light btn-small #42a5f5 blue lighten-1" href="index.php">Volver</a>
+        <a class="waves-effect waves-light btn-small #42a5f5 blue lighten-1" href="../index.php">Volver</a>
     </div>
 </div>
     <center>

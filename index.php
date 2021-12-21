@@ -125,7 +125,7 @@ include "header.html";
 </div>  
 
 
-<script type="text/javascript" src="javascript.js"></script>
+<script type="text/javascript" src="./js/javascript.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 

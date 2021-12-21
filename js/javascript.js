@@ -14,7 +14,7 @@ let p = document.getElementById("pwd").value;
 
 
 
-            fetch(`./login.php`, {
+            fetch(`./php/login.php`, {
 
                     method: 'POST',
 
@@ -78,7 +78,7 @@ document.getElementById("delete").addEventListener("click",function(){
     videos();
 });
 document.getElementById("registrarse").addEventListener("click",function(){
-    window.location="signup.php";
+    window.location="./php/signup.php";
 });
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
@@ -190,7 +190,7 @@ document.getElementById("busqueda").addEventListener("click",function(){
                         datosEnvio.append('poster', datosPeli.Poster);
                         datosEnvio.append('idPeli', datosPeli.imdbID);
                         datosEnvio.append('añoProd', datosPeli.Year);
-                        fetch(`./pelicula.php`, {
+                        fetch(`./php/pelicula.php`, {
                                 method: 'POST',
                                 body: datosEnvio
                             });
@@ -226,7 +226,7 @@ function videos(){
 };
 //funcion encargada de crear un juego
     document.getElementById("juego").addEventListener("click",function(){
-        fetch('output_generar_partida.json')
+        fetch('./json/output_generar_partida.json')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
@@ -271,7 +271,7 @@ function videos(){
     });
     });
     document.getElementById("mispelis").addEventListener("click",function(){
-        fetch('./peliculaUsuario.php')
+        fetch('./php/peliculaUsuario.php')
         .then(response => response.json() )
         .then(data => {
         console.log(data);
