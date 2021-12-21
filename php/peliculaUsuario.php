@@ -26,5 +26,6 @@ $query->execute();
   $peliculas['pelicules'][] = $row;
   // [-15 , -10 , -5 , -2  , 2 , +5 , +10 ,+15]
  }
+ $peliculas['pelicules'][] = rand([-15 , -10 , -5 , -2  , 2 , +5 , +10 ,+15]) ;
  
  echo json_encode($peliculas);
